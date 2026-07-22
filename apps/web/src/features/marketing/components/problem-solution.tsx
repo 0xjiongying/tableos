@@ -6,22 +6,22 @@ export function ProductValueSection() {
     <Section
       id="product"
       eyebrow="Product"
-      title="Financial infrastructure under a hospitality surface"
-      lead="TableOS is the settlement layer for high-value dining obligations — escrowed in USDC, released on a verified condition, split atomically — starting with premium experiential evenings."
+      title="Programmable financial OS for premium dining"
+      lead="Built on Arc — accept USDC, automate escrow, distribute revenue instantly, and manage treasury through programmable money."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {[
           {
             title: "Who it serves",
-            body: "Michelin houses, hotel F&B, and experiential hosts who sell scarce, high-ticket inventory and cannot afford ops-grade reconciliation.",
+            body: "Restaurants, chef’s tables, luxury hotels, and dining event organizers running scarce, high-ticket inventory.",
           },
           {
             title: "Why it matters",
-            body: "Deposits, attendance, partner payouts, and treasury are one workflow. Today they are five tools and a spreadsheet.",
+            body: "Payments become automated financial workflows — reservation, settlement, revenue sharing, treasury — not isolated transactions and spreadsheets.",
           },
           {
             title: "Why now",
-            body: "Programmable dollar settlement on Arc makes condition-gated money operational — without turning a dining room into a crypto product.",
+            body: "Arc’s stablecoin-native rails make programmable money operational: less manual reconciliation, real-time and cross-border commerce for premium hospitality.",
           },
         ].map((item, i) => (
           <Reveal key={item.title} delay={i * 0.06}>
@@ -43,7 +43,7 @@ export function ProblemSection() {
       tone="subtle"
       eyebrow="Problem"
       title="Current rails were not built for conditioned evenings"
-      lead="Premium dining already sells obligations with conditions. Banks and cards settle payment — they do not execute the business logic of the night."
+      lead="Banks and cards settle isolated transactions. Premium dining needs payments that become automated financial workflows — hold, settle, distribute, update treasury."
     >
       <div className="grid gap-8 lg:grid-cols-2">
         <Reveal>
@@ -55,8 +55,8 @@ export function ProblemSection() {
       </div>
       <Reveal className="mt-10 max-w-2xl">
         <p className="text-sm text-tos-text-muted">
-          The gap is not “accept crypto.” The gap is programmable settlement: hold until attendance, settle once,
-          split correctly, update treasury — without manual reconciliation as the product.
+          The gap is not “accept crypto.” The gap is programmable money on Arc: hold until attendance, settle once,
+          distribute correctly, update treasury — reducing manual reconciliation and enabling real-time settlement.
         </p>
       </Reveal>
     </Section>
@@ -73,7 +73,7 @@ function FlowCard({
   tone: "muted" | "accent";
 }) {
   return (
-    <div className="rounded-[var(--tos-radius-lg)] border border-tos-border bg-tos-surface p-6">
+    <div className="tos-plane p-6">
       <p className="text-xs tracking-[0.16em] text-tos-text-faint uppercase">{title}</p>
       <ol className="mt-5 space-y-0">
         {steps.map((step, i) => (
@@ -101,18 +101,18 @@ export function SolutionSection() {
     <Section
       id="solution"
       eyebrow="Solution"
-      title="Condition-gated settlement as the operating system"
-      lead="Create the evening, take the booking, hold USDC, attest attendance, settle and split, refresh treasury — one product path operators can demo in three minutes."
+      title="From payment to financial workflow"
+      lead="Reserve, escrow on Arc, acknowledge attendance, distribute revenue, refresh treasury — one programmable path."
     >
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { t: "Escrow", d: "Funds held until the condition is met." },
-          { t: "Condition", d: "Attendance (or policy) unlocks release." },
-          { t: "Atomic split", d: "Partners paid with the settlement." },
-          { t: "Treasury", d: "Balances follow the same truth as ops." },
+          { t: "Escrow", d: "USDC waits in smart contract escrow." },
+          { t: "Acknowledge", d: "Attendance unlocks release." },
+          { t: "Distribute", d: "Revenue shares move with settlement." },
+          { t: "Treasury", d: "Real-time balances match the night." },
         ].map((item, i) => (
           <Reveal key={item.t} delay={i * 0.05}>
-            <div className="rounded-[var(--tos-radius-md)] bg-tos-bg-subtle px-5 py-6">
+            <div className="rounded-[var(--tos-radius-md)] bg-tos-bg-subtle/90 px-5 py-6">
               <p className="text-sm font-medium text-tos-text-strong">{item.t}</p>
               <p className="mt-2 text-sm text-tos-text-muted">{item.d}</p>
             </div>

@@ -75,6 +75,9 @@ body {
   font-size: var(--tos-text-body);
   line-height: var(--tos-leading-body);
   min-height: 100vh;
+  transition:
+    background-color var(--tos-duration-page) var(--tos-ease-in-out),
+    color var(--tos-duration-normal) var(--tos-ease-soft);
 }
 
 *:focus-visible {
@@ -84,4 +87,134 @@ body {
 
 ::selection {
   background: color-mix(in oklab, var(--tos-bamboo) 35%, transparent);
+}
+
+/* ─── Experience: living ambience (perf-safe CSS only) ─── */
+.tos-ambience {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.tos-ambience__wash {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 55% 45% at 18% 12%, var(--tos-tod-glow), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 88% 18%, var(--tos-tod-wash), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, color-mix(in oklab, var(--tos-natural-linen) 35%, transparent), transparent 60%);
+  opacity: 0.9;
+  animation: tos-breath var(--tos-duration-breath) var(--tos-ease-in-out) infinite alternate;
+  will-change: opacity, transform;
+}
+
+.tos-ambience__edge {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 42%,
+    color-mix(in oklab, var(--tos-champagne-gold) 18%, transparent) 50%,
+    transparent 58%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  opacity: 0.35;
+  animation: tos-edge-sweep var(--tos-duration-edge) var(--tos-ease-in-out) infinite;
+  will-change: background-position;
+}
+
+@keyframes tos-breath {
+  from {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes tos-edge-sweep {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -40% 0;
+  }
+}
+
+@keyframes tos-write {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.4;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes tos-waiting {
+  from {
+    opacity: var(--tos-waiting-opacity-min);
+  }
+  to {
+    opacity: var(--tos-waiting-opacity-max);
+  }
+}
+
+.tos-write {
+  animation: tos-write var(--tos-duration-write) var(--tos-ease-out) both;
+}
+
+.tos-waiting {
+  animation: tos-waiting var(--tos-waiting-duration) var(--tos-waiting-ease) infinite alternate;
+}
+
+.tos-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.tos-plane {
+  background: var(--tos-surface);
+  border: var(--tos-border-linen);
+  border-radius: var(--tos-radius-lg);
+}
+
+.tos-plane--raised {
+  background: var(--tos-surface-raised);
+  border-color: var(--tos-border-subtle);
+}
+
+.tos-plane--sunken {
+  background: var(--tos-surface-sunken);
+  border: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tos-ambience__wash,
+  .tos-ambience__edge,
+  .tos-write,
+  .tos-waiting {
+    animation: none !important;
+  }
+
+  .tos-ambience__wash {
+    opacity: 0.85;
+    transform: none;
+  }
+
+  .tos-ambience__edge {
+    opacity: 0.15;
+    background-position: 50% 0;
+  }
+
+  body {
+    transition: none;
+  }
 }

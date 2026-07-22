@@ -3,6 +3,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { prisma } from "@/lib/db";
 import { GuestNav } from "@/components/layout/nav";
+import { GuestExperienceShell } from "@/components/experience/guest-shell";
 import { formatMoney } from "@/lib/utils";
 import { guestPaymentCopy } from "@/domain/settlement";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,7 @@ export default async function ConfirmPage({
   const payment = reservation.payments[0];
 
   return (
-    <div className="min-h-screen">
+    <GuestExperienceShell>
       <GuestNav restaurantName={reservation.restaurant.name} />
       <main className="mx-auto flex max-w-[28rem] flex-col px-8 py-12">
         <p className="text-xs tracking-[0.18em] text-tos-premium uppercase">Confirmed</p>
@@ -39,7 +40,7 @@ export default async function ConfirmPage({
           {guestPaymentCopy(payment?.status ?? "PENDING")}
         </p>
 
-        <dl className="mt-8 space-y-4 rounded-[var(--tos-radius-lg)] border border-tos-border-subtle bg-tos-surface p-6">
+        <dl className="mt-8 space-y-4 tos-plane p-6">
           <div>
             <dt className="text-xs text-tos-text-muted">Confirmation</dt>
             <dd className="font-mono text-lg text-tos-text-strong">{reservation.confirmationCode}</dd>
@@ -63,7 +64,7 @@ export default async function ConfirmPage({
                 {payment.status.replaceAll("_", " ")}
               </dd>
               <dd className="mt-1 text-xs text-tos-text-faint">
-                Adapter: {payment.adapter}
+                Held until attendance
                 {payment.escrowRef ? ` · ref ${payment.escrowRef}` : ""}
               </dd>
             </div>
@@ -76,6 +77,6 @@ export default async function ConfirmPage({
           </Link>
         </div>
       </main>
-    </div>
+    </GuestExperienceShell>
   );
 }

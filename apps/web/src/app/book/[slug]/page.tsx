@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { notFound } from "next/navigation";
 import { getRestaurantBySlug } from "@/features/reservations/service";
 import { GuestNav } from "@/components/layout/nav";
+import { GuestExperienceShell } from "@/components/experience/guest-shell";
 import { formatMoney } from "@/lib/utils";
 import { BookForm } from "@/features/booking/book-form";
 import { EmptyState } from "@/components/ui/states";
@@ -18,10 +19,10 @@ export default async function BookPage({
   const events = restaurant.diningEvents;
 
   return (
-    <div className="min-h-screen">
+    <GuestExperienceShell>
       <GuestNav restaurantName={restaurant.name} />
-      <main className="mx-auto max-w-[40rem] px-8 py-10">
-        <header className="mb-10">
+      <main className="relative mx-auto max-w-[40rem] px-8 py-10">
+        <header className="relative mb-10">
           <p className="text-xs tracking-[0.18em] text-tos-premium uppercase">Reservations</p>
           <h1 className="mt-2 text-[length:var(--tos-text-title)] text-tos-text-strong">
             {restaurant.tagline ?? "An evening at the counter"}
@@ -71,6 +72,6 @@ export default async function BookPage({
           </ul>
         )}
       </main>
-    </div>
+    </GuestExperienceShell>
   );
 }

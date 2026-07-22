@@ -1,8 +1,8 @@
 export const SITE = {
   name: "TableOS",
-  tagline: "The Financial Operating System for Premium Dining.",
+  tagline: "Programmable financial OS for premium dining.",
   description:
-    "TableOS is financial infrastructure for luxury dining businesses — USDC payments, programmable escrow, automatic settlement, and treasury — built for Circle’s Arc network.",
+    "TableOS is a programmable financial operating system for premium dining businesses built on Arc. Accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
   url: "https://tableos-delta.vercel.app",
   github: "https://github.com/0xjiongying/tableos",
   demoBook: "/book/kintsugi",
@@ -48,58 +48,70 @@ export const NAV_LINKS = [
   { href: "/#demo", label: "Demo" },
 ] as const;
 
+/** Core MVP — keep marketing feature lists aligned to these six only */
 export const FEATURES = [
   {
+    id: "event-reservations",
+    title: "Premium dining event reservations",
+    problem:
+      "Scarce tasting and residency inventory is sold through tools that stop at the booking — finance still closes the night elsewhere.",
+    solution:
+      "Operators publish premium dining events with capacity, price, and settlement rules bound to each reservation.",
+    impact:
+      "Inventory, payment, and settlement start as one obligation — not a reservation record plus a separate ledger chase.",
+    arc: "Reservation intents are designed to bind to Arc USDC payment and escrow state from the first hold.",
+  },
+  {
     id: "usdc-payments",
-    title: "USDC Payments",
+    title: "USDC payments on Arc",
     problem:
       "Card rails settle slowly, charge high fees on high-ticket covers, and leave finance teams reconciling days later.",
     solution:
-      "Guests pay in USDC at booking. Payment intents bind to the reservation; settlement is designed for Arc’s USDC-native rails.",
+      "Guests pay in USDC at booking. Payment intents bind to the reservation on Arc’s stablecoin-native rails.",
     impact:
       "Fewer failed collections on scarce seats, faster cash recognition, and one ledger line per evening — not a pile of processor exports.",
     arc: "Arc is stablecoin-native with USDC as primary gas — predictable fiat-denominated costs instead of volatile L1 gas for every hold and release.",
   },
   {
-    id: "programmable-escrow",
-    title: "Programmable Escrow",
+    id: "smart-contract-escrow",
+    title: "Smart contract escrow",
     problem:
       "Deposits sit in operating accounts or third-party processors with manual release rules staff cannot reliably enforce.",
     solution:
-      "Funds are held under explicit conditions — typically attendance — and released or returned by policy, not spreadsheet judgment.",
+      "Funds are held in smart contract escrow under explicit conditions — typically attendance — and released or returned by policy.",
     impact:
       "No-show risk is priced into the booking. Guests trust the hold; operators trust the release.",
     arc: "Sub-second deterministic finality (~780ms, Malachite BFT) means escrow state is settlement-grade — not probabilistic finality with re-org risk.",
   },
   {
     id: "revenue-distribution",
-    title: "Revenue Distribution",
+    title: "Automatic revenue distribution",
     problem:
       "After a sold-out tasting, house, partners, and venues reconcile splits by hand — errors and delays follow.",
     solution:
-      "On verified attendance, TableOS settles the evening and splits revenue according to predefined rules.",
+      "On verified attendance, TableOS settles the evening and distributes revenue according to predefined rules.",
     impact:
       "Partners get paid with the event, not weeks later. Finance closes the night with an auditable trail.",
     arc: "Programmable USDC on an EVM L1 purpose-built for payments lets split logic execute with the settlement — Stripe/card rails cannot collapse multi-party payout into one atomic condition.",
   },
   {
     id: "treasury-dashboard",
-    title: "Treasury Dashboard",
+    title: "Real-time treasury dashboard",
     problem:
       "Operators know covers sold, not what is held, released, or owed across events and partners.",
     solution:
-      "A single treasury view shows held funds, settled revenue, and pending obligations for the house.",
+      "A real-time treasury view shows held funds, settled revenue, and pending obligations for the house.",
     impact:
       "Owners make capital decisions from live settlement state instead of waiting on month-end accounting.",
     arc: "Deterministic finality and USDC-native accounting map held vs settled balances to the same truth the network enforces.",
   },
   {
     id: "ai-treasury",
-    title: "AI Treasury Assistant",
+    title: "AI-powered treasury assistant",
     problem:
       "Operators drown in reservation noise when they need a clear answer: what settled, what is held, what needs attention.",
     solution:
-      "An assistant summarizes settlement posture and helps staff find reservations in natural language over demo or live data.",
+      "An AI-powered assistant summarizes treasury posture and helps staff find reservations in natural language over demo or live data.",
     impact:
       "Managers brief before service in seconds — without opening five tools.",
     arc: "Arc targets real-world finance and the agentic economy; TableOS keeps AI on structured settlement events, not speculative chain theatre.",
@@ -108,16 +120,20 @@ export const FEATURES = [
 
 export const USE_CASES = [
   {
-    title: "Michelin & omakase houses",
-    body: "Sell scarce tasting inventory with deposits held until the guest arrives, then settle the house cleanly.",
+    title: "Restaurants",
+    body: "Run high-ticket tasting and private-dining inventory with USDC payment, escrow, and treasury in one financial workflow.",
   },
   {
-    title: "Hotel fine dining & residencies",
-    body: "Coordinate multi-party evenings — chef, venue, hotel — with automatic revenue splits after attendance.",
+    title: "Chef’s tables",
+    body: "Sell scarce chef-led seats with funds held until attendance, then settle the house without spreadsheet payouts.",
   },
   {
-    title: "Private dining & experiential events",
-    body: "Treat each evening as a financial workflow: book, hold, attest, settle — not a spreadsheet project.",
+    title: "Luxury hotels",
+    body: "Coordinate hotel F&B and visiting talent with automatic revenue distribution and a live treasury view.",
+  },
+  {
+    title: "Dining event organizers",
+    body: "Treat each residency or collaboration night as programmable money — reserve, escrow, distribute, update treasury.",
   },
 ] as const;
 
@@ -147,11 +163,11 @@ export const WHY_ARC = [
 export const WHY_NOT_ALTERNATIVES = [
   {
     title: "Why not Stripe / card rails alone?",
-    body: "Cards authorize and batch-settle. They do not natively hold funds until attendance, then atomically split house and partner shares into treasury as one programmable workflow.",
+    body: "Cards authorize and batch-settle. They treat payments as isolated transactions — they do not turn each payment into an automated financial workflow from reservation through escrow, split, and treasury.",
   },
   {
     title: "Why not a general L1 / L2?",
-    body: "Volatile gas, probabilistic finality or re-orgs, and weak stablecoin/compliance tooling fight settlement products. Arc’s primitives match escrow → condition → split → treasury.",
+    body: "Volatile gas, probabilistic finality or re-orgs, and weak stablecoin/compliance tooling fight settlement products. Arc’s stablecoin-native primitives match escrow → condition → split → treasury.",
   },
 ] as const;
 
@@ -174,7 +190,7 @@ export const ENTERPRISE = [
   },
   {
     title: "Scalability",
-    body: "Beachhead is premium dining. Architecture is condition-gated settlement on institutional USDC rails — extensible beyond a single restaurant skin.",
+    body: "Built for premium dining businesses today; designed to evolve into enterprise-grade financial infrastructure for global premium hospitality.",
   },
   {
     title: "Availability & transparency",
@@ -184,12 +200,16 @@ export const ENTERPRISE = [
 
 export const FAQ = [
   {
+    q: "What is TableOS?",
+    a: "TableOS is a programmable financial operating system for premium dining businesses built on Arc. It turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — instead of treating payments as isolated transactions.",
+  },
+  {
     q: "Is TableOS a restaurant website builder?",
-    a: "No. TableOS is financial infrastructure for premium dining — payments, escrow, settlement, distribution, and treasury — with a calm hospitality product shell so guests and staff can use it.",
+    a: "No. TableOS is financial infrastructure for premium hospitality: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
   },
   {
     q: "Why programmable money?",
-    a: "Hospitality already sells conditioned obligations: seats, deposits, partner splits. Programmable USDC lets those conditions execute automatically instead of living in ops debt.",
+    a: "Premium dining already sells conditioned obligations: seats, deposits, partner splits. Programmable USDC on Arc lets those conditions execute automatically — simplifying operations, reducing manual reconciliation, and enabling real-time, cross-border commerce.",
   },
   {
     q: "Why Arc?",
@@ -205,54 +225,94 @@ export const FAQ = [
   },
   {
     q: "Who is this for?",
-    a: "Luxury dining operators, hotel F&B, and experiential hosts who run high-value scarce inventory — and investors evaluating condition-gated settlement as a company, not a restaurant SaaS.",
+    a: "Restaurants, chef’s tables, luxury hotels, and dining event organizers — premium dining businesses that need programmable money for payments, escrow, revenue distribution, and treasury.",
   },
   {
     q: "What ships today?",
-    a: "Event inventory, guest booking, payment hold confirmation, door attendance → release, staff dashboard, and an AI briefing path. Full POS, kitchen boards, and live Arc mainnet calls are explicitly out of v1 scope. Arc public testnet launched Oct 28, 2025; mainnet targeted 2026.",
+    a: "Core MVP: premium dining event reservations, USDC payments on Arc, smart contract escrow, automatic revenue distribution, real-time treasury dashboard, and an AI-powered treasury assistant. Full POS, kitchen boards, and live Arc mainnet calls are out of v1 scope. Arc public testnet launched Oct 28, 2025; mainnet targeted 2026.",
   },
 ] as const;
 
 export const WORKFLOW_STEPS = [
   {
     id: "create",
-    label: "Create event",
-    detail: "Staff publishes a scarce evening with capacity, price, and settlement rules.",
+    label: "Compose the evening",
+    detail: "Staff publish a scarce night — capacity, price, and the rules that will settle it.",
+    phase: "prepare" as const,
   },
   {
     id: "reserve",
-    label: "Reserve",
-    detail: "Guest claims a seat. Inventory locks against double-booking.",
+    label: "Seat is claimed",
+    detail: "Guest reserves. Inventory locks. The house already knows who is coming.",
+    phase: "arrive" as const,
   },
   {
     id: "pay",
-    label: "USDC payment",
-    detail: "Guest pays in USDC. Payment intent is bound to the reservation.",
+    label: "Funds arrive",
+    detail: "Guest pays in USDC. The payment binds to the reservation — quietly.",
+    phase: "arrive" as const,
   },
   {
     id: "escrow",
-    label: "Escrow",
-    detail: "Funds are held — not spent — until the attendance condition is met.",
+    label: "Held until arrival",
+    detail: "Money waits in smart contract escrow. Not spent. Not forgotten. Ready for the door.",
+    phase: "wait" as const,
   },
   {
     id: "attend",
-    label: "Attendance",
-    detail: "Door staff attest arrival. The condition that unlocks settlement is recorded.",
+    label: "Door acknowledges",
+    detail: "Attendance is attested. The condition that unlocks the night is recorded.",
+    phase: "acknowledge" as const,
   },
   {
     id: "settle",
-    label: "Auto settlement",
-    detail: "Held funds release under policy. Designed for Arc’s deterministic USDC settlement.",
+    label: "Settlement releases",
+    detail: "Held funds release under policy — designed for Arc’s deterministic USDC settlement.",
+    phase: "handoff" as const,
   },
   {
     id: "split",
-    label: "Revenue split",
-    detail: "House and partners receive predefined shares in one settlement pass.",
+    label: "House and partners",
+    detail: "Revenue distributes in one pass. No spreadsheet chase after service.",
+    phase: "handoff" as const,
   },
   {
     id: "treasury",
-    label: "Treasury updated",
-    detail: "Balances and activity reflect the closed evening. Finance sees the same truth ops does.",
+    label: "Evening closes",
+    detail: "Real-time treasury reflects the same truth ops just lived. Finance and floor agree.",
+    phase: "complete" as const,
+  },
+] as const;
+
+/** Editorial chapters — map to MVP capabilities without feature bloat */
+export const SERVICE_CHAPTERS = [
+  {
+    id: "morning",
+    hour: "Morning",
+    title: "The book is set",
+    body: "Premium dining event inventory, price, and settlement rules are composed before the first guest thinks of dinner. Ops sees clarity; guests never see the ledger.",
+    capability: "Premium dining event reservations",
+  },
+  {
+    id: "booking",
+    hour: "Afternoon",
+    title: "A seat is held",
+    body: "The guest claims a scarce place. USDC arrives on Arc and waits in smart contract escrow — held until attendance, spoken in hospitality language, not wallet theatre.",
+    capability: "USDC payments on Arc · smart contract escrow",
+  },
+  {
+    id: "service",
+    hour: "Service",
+    title: "The door opens the night",
+    body: "Attendance is the condition. One quiet acknowledgment at the door turns held funds into settlement — every payment becomes an automated financial workflow.",
+    capability: "Automatic revenue distribution",
+  },
+  {
+    id: "close",
+    hour: "Close",
+    title: "Partners are paid; the house rests",
+    body: "Revenue distributes and the real-time treasury updates with the evening. Managers brief in seconds via the AI-powered treasury assistant.",
+    capability: "Real-time treasury · AI treasury assistant",
   },
 ] as const;
 
@@ -284,10 +344,10 @@ export const CURRENT_FLOW = [
 ] as const;
 
 export const FUTURE_FLOW = [
-  "USDC pay",
-  "Programmable escrow",
+  "USDC pay on Arc",
+  "Smart contract escrow",
   "Auto settlement",
-  "Revenue split",
+  "Revenue distribution",
   "Treasury updated",
   "Workflow complete",
 ] as const;

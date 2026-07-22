@@ -30,7 +30,7 @@ export function ArchitectureSection() {
     >
       <Reveal>
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[var(--tos-radius-lg)] border border-tos-border bg-tos-surface p-4 md:p-6">
+          <div className="tos-plane p-4 md:p-6">
             <svg
               viewBox="0 0 640 360"
               className="h-auto w-full"

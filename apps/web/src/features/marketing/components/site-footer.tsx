@@ -74,8 +74,8 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-tos-border-subtle">
         <div className="mx-auto flex max-w-[72rem] flex-col gap-2 px-6 py-6 text-xs text-tos-text-faint md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} TableOS. Condition-gated settlement for premium dining.</p>
-          <p>Not a restaurant website — financial infrastructure.</p>
+          <p>© {new Date().getFullYear()} TableOS. The operating system of hospitality.</p>
+          <p>Settlement underneath · hospitality on the surface.</p>
         </div>
       </div>
     </footer>

@@ -183,12 +183,82 @@
   --tos-duration-normal: 280ms;
   --tos-duration-slow: 420ms;
   --tos-duration-page: 520ms;
+  --tos-duration-breath: 8s;
+  --tos-duration-edge: 6.5s;
+  --tos-duration-write: 900ms;
+
+  /* Hospitality motion primitives — service choreography, never bounce */
+  --tos-arrive-duration: var(--tos-duration-slow);
+  --tos-arrive-ease: var(--tos-ease-out);
+  --tos-arrive-y: 8px;
+  --tos-arrive-opacity-from: 0;
+  --tos-acknowledge-duration: var(--tos-duration-fast);
+  --tos-acknowledge-ease: var(--tos-ease-soft);
+  --tos-acknowledge-scale: 1.012;
+  --tos-handoff-duration: var(--tos-duration-normal);
+  --tos-handoff-ease: var(--tos-ease-in-out);
+  --tos-handoff-x: 6px;
+  --tos-complete-duration: var(--tos-duration-slow);
+  --tos-complete-ease: var(--tos-ease-out);
+  --tos-waiting-duration: var(--tos-duration-breath);
+  --tos-waiting-ease: var(--tos-ease-in-out);
+  --tos-waiting-opacity-min: 0.72;
+  --tos-waiting-opacity-max: 1;
+
+  /* Time-of-day ambience overlays (wired by [data-tod] on html) */
+  --tos-tod-wash: transparent;
+  --tos-tod-warmth: 0;
+  --tos-tod-contrast: 1;
+  --tos-tod-glow: color-mix(in oklab, var(--tos-champagne-gold) 0%, transparent);
+  --tos-tod-label: "afternoon";
 
   /* ─── Materials (CSS mapping hints) ─── */
   --tos-texture-washi: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   --tos-border-ceramic: 1px solid var(--tos-border);
   --tos-border-linen: 1px solid var(--tos-border-subtle);
   --tos-hairline-gold: 1px solid color-mix(in oklab, var(--tos-champagne-gold) 55%, var(--tos-warm-stone));
+  --tos-shadow-soft: 0 1px 0 color-mix(in oklab, var(--tos-ink-black) 4%, transparent);
+}
+
+/* Morning — warm daylight */
+html[data-tod="morning"] {
+  --tos-tod-label: "morning";
+  --tos-tod-warmth: 0.06;
+  --tos-tod-wash: color-mix(in oklab, var(--tos-champagne-gold) 7%, transparent);
+  --tos-tod-glow: color-mix(in oklab, var(--tos-bamboo) 10%, transparent);
+  --tos-bg: color-mix(in oklab, var(--tos-rice-white) 92%, #fff6e8);
+  --tos-bg-subtle: color-mix(in oklab, var(--tos-warm-ivory) 88%, #f5e6c8);
+}
+
+/* Afternoon — neutral calm (default) */
+html[data-tod="afternoon"] {
+  --tos-tod-label: "afternoon";
+  --tos-tod-warmth: 0;
+  --tos-tod-wash: transparent;
+  --tos-tod-glow: color-mix(in oklab, var(--tos-champagne-gold) 4%, transparent);
+}
+
+/* Evening — golden service light */
+html[data-tod="evening"] {
+  --tos-tod-label: "evening";
+  --tos-tod-warmth: 0.1;
+  --tos-tod-wash: color-mix(in oklab, var(--tos-champagne-gold) 11%, transparent);
+  --tos-tod-glow: color-mix(in oklab, var(--tos-brushed-brass) 14%, transparent);
+  --tos-bg: color-mix(in oklab, var(--tos-rice-white) 86%, #f0e4d0);
+  --tos-bg-subtle: color-mix(in oklab, var(--tos-warm-ivory) 82%, #e8d4b4);
+  --tos-border-accent: color-mix(in oklab, var(--tos-champagne-gold) 70%, var(--tos-warm-stone));
+}
+
+/* Night — quiet graphite (still matte hospitality, not crypto dark) */
+html[data-tod="night"] {
+  --tos-tod-label: "night";
+  --tos-tod-warmth: 0.02;
+  --tos-tod-contrast: 0.98;
+  --tos-tod-wash: color-mix(in oklab, var(--tos-charcoal) 4%, transparent);
+  --tos-tod-glow: color-mix(in oklab, var(--tos-champagne-gold) 6%, transparent);
+  --tos-bg: color-mix(in oklab, var(--tos-rice-white) 94%, #d8d4ce);
+  --tos-bg-subtle: color-mix(in oklab, var(--tos-warm-ivory) 90%, #cfc9c0);
+  --tos-text-muted: color-mix(in oklab, var(--tos-warm-gray) 92%, var(--tos-charcoal));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -198,5 +268,13 @@
     --tos-duration-normal: 0ms;
     --tos-duration-slow: 0ms;
     --tos-duration-page: 0ms;
+    --tos-duration-breath: 0ms;
+    --tos-duration-edge: 0ms;
+    --tos-duration-write: 0ms;
+    --tos-arrive-duration: 0ms;
+    --tos-acknowledge-duration: 0ms;
+    --tos-handoff-duration: 0ms;
+    --tos-complete-duration: 0ms;
+    --tos-waiting-duration: 0ms;
   }
 }

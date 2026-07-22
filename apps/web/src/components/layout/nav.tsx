@@ -14,7 +14,7 @@ export function StaffNav({ pathname }: { pathname: string }) {
     <header className="border-b border-tos-border-subtle bg-tos-surface/80 backdrop-blur-sm">
       <div className="mx-auto flex max-w-[72rem] flex-wrap items-center justify-between gap-4 px-6 py-4">
         <div className="flex items-center gap-6">
-          <Link href="/staff" className="font-medium tracking-tight text-tos-text-strong">
+          <Link href="/staff" className="text-base font-medium tracking-[-0.02em] text-tos-text-strong">
             TableOS
           </Link>
           <nav aria-label="Staff" className="flex flex-wrap gap-1">

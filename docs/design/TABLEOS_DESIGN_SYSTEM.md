@@ -191,13 +191,22 @@ Bright interface. Soft daylight. Excellent readability. Accents sparingly.
 | Normal | 280ms | Panels, soft fade |
 | Slow | 420ms | Course / state reveals |
 | Page | 520ms | Route transitions |
+| Breath | 8s | Living ambience / waiting |
+| Edge | 6.5s | Thin champagne edge sweep |
+| Write | 900ms | Progressive text reveal |
 
 **Easing:** soft decelerate `cubic-bezier(0.22, 1, 0.36, 1)` for entrances; gentle in-out for shared layout.
 
-**Allowed:** opacity fades, 1–2% scale, subtle y-translate (4–8px), page crossfade.  
+**Hospitality primitives:** arrival · acknowledgment · handoff · completion · waiting — see `tokens.css` / `tokens.json`.
+
+**Time-of-day:** `html[data-tod="morning|afternoon|evening|night"]` shifts wash/warmth via CSS variables (local clock or demo control).
+
+**Allowed:** opacity fades, 1–2% scale, subtle y-translate (4–8px), page crossfade, CSS breath/edge (paused under reduced motion).  
 **Forbidden:** bounce, springy overshoot, confetti, neon glow pulses, parallax noise.
 
 **`prefers-reduced-motion`:** durations → 0; instant state change; retain non-animated focus/status clarity.
+
+**Experience audit:** [`EXPERIENCE_AUDIT.md`](./EXPERIENCE_AUDIT.md)
 
 ---
 

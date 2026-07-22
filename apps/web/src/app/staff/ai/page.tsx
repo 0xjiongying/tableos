@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input, Label } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 type AiResponse = {
   ok?: boolean;
@@ -27,6 +27,26 @@ export default function StaffAiPage() {
   const [query, setQuery] = useState("Elena confirmed");
   const [loading, setLoading] = useState<"summary" | "search" | null>(null);
 
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      setLoading("summary");
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "summary", query: "" }),
+      });
+      const data = (await res.json()) as AiResponse;
+      if (!cancelled) {
+        setSummary(data);
+        setLoading(null);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   async function run(mode: "summary" | "search") {
     setLoading(mode);
     const res = await fetch("/api/ai", {
@@ -41,40 +61,39 @@ export default function StaffAiPage() {
   }
 
   return (
-    <main className="space-y-8">
+    <main className="space-y-10">
       <header>
-        <h1 className="text-[length:var(--tos-text-title)] text-tos-text-strong">Briefing</h1>
-        <p className="mt-1 text-sm text-tos-text-muted">
-          AI operations summary and natural-language reservation search. Works offline via
-          heuristics when <span className="font-mono">OPENAI_API_KEY</span> is unset.
+        <p className="text-xs tracking-[0.18em] text-tos-premium uppercase">Before service</p>
+        <h1 className="mt-2 text-[length:var(--tos-text-title)] text-tos-text-strong">Evening posture</h1>
+        <p className="mt-1 max-w-xl text-sm text-tos-text-muted">
+          What settled, what is held, what needs attention — already composed for the floor.
         </p>
       </header>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Evening brief</CardTitle>
-          <CardDescription>Revenue glance in calm language.</CardDescription>
-        </CardHeader>
-        <Button onClick={() => run("summary")} disabled={loading === "summary"}>
-          {loading === "summary" ? "Composing…" : "Generate briefing"}
-        </Button>
-        {summary?.content ? (
-          <p className="mt-4 text-sm leading-relaxed text-tos-text">{summary.content}</p>
-        ) : null}
-        {summary?.provider ? (
-          <p className="mt-2 text-xs text-tos-text-faint">
-            Provider: {summary.provider}
-            {summary.model ? ` · ${summary.model}` : ""}
-          </p>
-        ) : null}
-      </Card>
+      <section className="tos-plane p-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-sm font-medium text-tos-text-strong">Tonight</h2>
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => run("summary")}
+            disabled={loading === "summary"}
+          >
+            {loading === "summary" ? "Refreshing…" : "Refresh"}
+          </Button>
+        </div>
+        <div
+          className={cn("mt-4 min-h-[4.5rem] text-sm leading-relaxed text-tos-text", !summary?.content && "tos-waiting")}
+          aria-live="polite"
+        >
+          {summary?.content ?? (loading === "summary" ? "Composing the evening…" : "—")}
+        </div>
+      </section>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Find a reservation</CardTitle>
-          <CardDescription>Ask in plain language.</CardDescription>
-        </CardHeader>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+      <section>
+        <h2 className="text-sm font-medium text-tos-text-strong">Find a guest</h2>
+        <p className="mt-1 text-sm text-tos-text-muted">Ask in plain language.</p>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-end">
           <div className="flex-1">
             <Label htmlFor="query">Query</Label>
             <Input id="query" value={query} onChange={(e) => setQuery(e.target.value)} />
@@ -83,15 +102,13 @@ export default function StaffAiPage() {
             {loading === "search" ? "Searching…" : "Search"}
           </Button>
         </div>
-        {search?.content ? (
-          <p className="mt-4 text-sm text-tos-text">{search.content}</p>
-        ) : null}
+        {search?.content ? <p className="mt-4 text-sm text-tos-text">{search.content}</p> : null}
         {search?.hits?.length ? (
           <ul className="mt-3 space-y-2">
             {search.hits.map((h) => (
               <li
                 key={h.id}
-                className="rounded-[var(--tos-radius-md)] border border-tos-border-subtle bg-tos-bg-subtle px-3 py-2 text-sm"
+                className="rounded-[var(--tos-radius-md)] bg-tos-bg-subtle px-3 py-2 text-sm"
               >
                 <span className="font-medium text-tos-text-strong">{h.guestName}</span>
                 <span className="text-tos-text-muted">
@@ -103,7 +120,7 @@ export default function StaffAiPage() {
             ))}
           </ul>
         ) : null}
-      </Card>
+      </section>
     </main>
   );
 }

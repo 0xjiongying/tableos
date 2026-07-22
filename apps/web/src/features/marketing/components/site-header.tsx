@@ -16,8 +16,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-tos-border-subtle bg-tos-bg/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[72rem] items-center justify-between gap-4 px-6 md:px-8">
         <Link href="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="text-sm font-medium tracking-tight text-tos-text-strong">{SITE.name}</span>
-          <span className="hidden text-xs text-tos-text-faint sm:inline">Financial OS</span>
+          <span className="text-base font-medium tracking-[-0.02em] text-tos-text-strong">{SITE.name}</span>
+          <span className="hidden text-xs text-tos-text-faint sm:inline">Hospitality OS</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
