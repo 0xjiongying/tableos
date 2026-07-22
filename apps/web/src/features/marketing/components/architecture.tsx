@@ -26,7 +26,7 @@ export function ArchitectureSection() {
       id="architecture"
       eyebrow="Architecture"
       title="How TableOS fits together"
-      lead="A clear boundary between the hospitality product, settlement adapters, and Arc — so demos stay honest and production stays extensible."
+      lead="A clear boundary between the dining product surface, settlement adapters, and Arc — so demos stay honest and production stays extensible."
     >
       <Reveal>
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">

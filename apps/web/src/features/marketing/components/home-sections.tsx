@@ -80,7 +80,7 @@ export function FeaturesSection() {
       id="features"
       eyebrow="Core MVP"
       title="Six capabilities. Each earns its place in the evening."
-      lead="Hospitality on the surface. Programmable settlement underneath — reservations through treasury, without feature bloat."
+      lead="Six settlement-critical capabilities — premium dining is the setting; programmable money is the story."
     >
       <ol className="grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
         {FEATURES.map((feature, i) => (
