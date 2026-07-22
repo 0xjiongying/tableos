@@ -8,13 +8,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-tos-accent text-tos-text-on-accent hover:bg-tos-accent-hover",
+          "tos-press bg-tos-accent text-tos-text-on-accent hover:bg-tos-accent-hover active:scale-[0.985]",
         secondary:
-          "bg-tos-surface-sunken text-tos-text-strong border border-tos-border hover:bg-tos-bg-muted",
-        ghost: "text-tos-text hover:bg-tos-bg-muted",
-        danger: "bg-tos-danger-bg text-tos-danger border border-[var(--tos-danger-border)]",
+          "tos-press bg-tos-surface-sunken text-tos-text-strong border border-tos-border hover:bg-tos-bg-muted active:scale-[0.985]",
+        ghost: "tos-press text-tos-text hover:bg-tos-bg-muted active:scale-[0.985]",
+        danger: "tos-press bg-tos-danger-bg text-tos-danger border border-[var(--tos-danger-border)] active:scale-[0.985]",
         premium:
-          "border border-[color-mix(in_oklab,var(--tos-champagne-gold)_55%,var(--tos-warm-stone))] text-tos-text-strong bg-tos-surface",
+          "tos-press border border-[color-mix(in_oklab,var(--tos-champagne-gold)_55%,var(--tos-warm-stone))] text-tos-text-strong bg-tos-surface active:scale-[0.985]",
       },
       size: {
         sm: "h-8 px-3 text-xs",

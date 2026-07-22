@@ -48,11 +48,12 @@ Tokens and surfaces already encode Luxury Japanese Hospitality (Geist, Deep Fore
 
 1. Extend tokens: hospitality motion primitives + time-of-day semantic overlays + signature CSS (breath, edge sweep)
 2. Shared ambience + time-of-day wiring on marketing shell + staff/guest shells
-3. Hero → brand-first service choreography visual (reservation → door → settle)
-4. Demo → continuous choreography language; ledger as secondary quiet state
-5. Features → day-in-service chapters (editorial)
+3. Hero → brand-first service + Value Streams visual (money under hospitality)
+4. Demo → continuous choreography / lifecycle; ledger as secondary quiet state
+5. Features + lifecycle chapters → editorial day-in-service / payment journey
 6. Soften AI briefing chrome; dynamic staff greeting
 7. Sync docs + app tokens; document deferred media
+8. **Synthesis:** keep Value Streams (programmable money) *under* hospitality OS brand — see [`EXPERIENCE_SYSTEM.md`](./EXPERIENCE_SYSTEM.md)
 
 ---
 

@@ -37,6 +37,13 @@
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 html.dark {
@@ -65,6 +72,7 @@ html.dark {
   --tos-warn-bg: color-mix(in oklab, var(--tos-champagne-gold) 18%, #1c1b19);
   --tos-danger-bg: color-mix(in oklab, var(--tos-soft-clay) 22%, #1c1b19);
   --tos-focus-ring: 0 0 0 2px var(--tos-bg), 0 0 0 4px var(--tos-accent);
+  --tos-mat-glass: color-mix(in oklab, #24221f 72%, transparent);
 }
 
 body {
@@ -89,13 +97,15 @@ body {
   background: color-mix(in oklab, var(--tos-bamboo) 35%, transparent);
 }
 
-/* ─── Experience: living ambience (perf-safe CSS only) ─── */
+/* ─── Experience: living ambience (perf-safe) ─── */
 .tos-ambience {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: var(--tos-z-ambience);
   overflow: hidden;
+  --tos-pointer-x: 50%;
+  --tos-pointer-y: 30%;
 }
 
 .tos-ambience__wash {
@@ -104,10 +114,26 @@ body {
   background:
     radial-gradient(ellipse 55% 45% at 18% 12%, var(--tos-tod-glow), transparent 60%),
     radial-gradient(ellipse 50% 40% at 88% 18%, var(--tos-tod-wash), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 50% 100%, color-mix(in oklab, var(--tos-natural-linen) 35%, transparent), transparent 60%);
+    radial-gradient(
+      ellipse 70% 50% at 50% 100%,
+      color-mix(in oklab, var(--tos-natural-linen) 35%, transparent),
+      transparent 60%
+    );
   opacity: 0.9;
   animation: tos-breath var(--tos-duration-breath) var(--tos-ease-in-out) infinite alternate;
   will-change: opacity, transform;
+}
+
+.tos-ambience__pointer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 38% 28% at var(--tos-pointer-x) var(--tos-pointer-y),
+    var(--tos-light-pointer),
+    transparent 70%
+  );
+  opacity: 0.55;
+  transition: opacity var(--tos-duration-normal) var(--tos-ease-soft);
 }
 
 .tos-ambience__edge {
@@ -122,9 +148,31 @@ body {
     transparent 100%
   );
   background-size: 220% 100%;
-  opacity: 0.35;
+  opacity: 0.32;
   animation: tos-edge-sweep var(--tos-duration-edge) var(--tos-ease-in-out) infinite;
   will-change: background-position;
+}
+
+.tos-ambience__dust {
+  position: absolute;
+  inset: 0;
+  opacity: var(--tos-dust-opacity);
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, var(--tos-warm-stone), transparent),
+    radial-gradient(1px 1px at 68% 38%, var(--tos-ash-gray), transparent),
+    radial-gradient(1.5px 1.5px at 42% 72%, var(--tos-champagne-gold), transparent),
+    radial-gradient(1px 1px at 88% 64%, var(--tos-warm-stone), transparent),
+    radial-gradient(1px 1px at 28% 88%, var(--tos-pale-taupe), transparent);
+  animation: tos-dust-drift 28s var(--tos-ease-in-out) infinite alternate;
+}
+
+.tos-ambience__grain {
+  position: absolute;
+  inset: 0;
+  opacity: var(--tos-grain-opacity);
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 @keyframes tos-breath {
@@ -144,6 +192,15 @@ body {
   }
   to {
     background-position: -40% 0;
+  }
+}
+
+@keyframes tos-dust-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -1.5%, 0);
   }
 }
 
@@ -167,6 +224,33 @@ body {
   }
 }
 
+@keyframes tos-flow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tos-stream-flow {
+  from {
+    stroke-dashoffset: 22;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tos-stream-flow {
+  animation: tos-stream-flow 2.2s linear infinite;
+}
+
+.tos-flow-line {
+  stroke-dasharray: 4 6;
+  animation: tos-flow 2.4s linear infinite;
+}
+
 .tos-write {
   animation: tos-write var(--tos-duration-write) var(--tos-ease-out) both;
 }
@@ -177,30 +261,92 @@ body {
 
 .tos-shell {
   position: relative;
-  z-index: 1;
+  z-index: var(--tos-z-shell);
 }
 
+/* Materials */
 .tos-plane {
-  background: var(--tos-surface);
-  border: var(--tos-border-linen);
+  background: var(--tos-mat-paper);
+  border: 1px solid var(--tos-mat-paper-edge);
   border-radius: var(--tos-radius-lg);
+  box-shadow: var(--tos-shadow-ambient);
+  transition:
+    box-shadow var(--tos-duration-fast) var(--tos-ease-soft),
+    border-color var(--tos-duration-fast) var(--tos-ease-soft),
+    transform var(--tos-duration-fast) var(--tos-ease-soft);
 }
 
 .tos-plane--raised {
-  background: var(--tos-surface-raised);
+  background: var(--tos-mat-ceramic);
   border-color: var(--tos-border-subtle);
 }
 
 .tos-plane--sunken {
   background: var(--tos-surface-sunken);
   border: none;
+  box-shadow: none;
+}
+
+.tos-plane--glass {
+  background: var(--tos-mat-glass);
+  border: 1px solid color-mix(in oklab, var(--tos-champagne-gold) 28%, var(--tos-border-subtle));
+  backdrop-filter: blur(var(--tos-mat-glass-blur));
+  -webkit-backdrop-filter: blur(var(--tos-mat-glass-blur));
+}
+
+.tos-lift:hover {
+  box-shadow: var(--tos-shadow-lift);
+  border-color: color-mix(in oklab, var(--tos-champagne-gold) 40%, var(--tos-border-subtle));
+  transform: translateY(-2px);
+}
+
+.tos-lift.tos-plane:hover,
+.tos-plane.tos-lift:hover {
+  box-shadow: var(--tos-shadow-lift);
+}
+
+/* Interface: button compress → release */
+.tos-press:active {
+  transform: scale(0.985);
+  box-shadow: var(--tos-shadow-press);
+}
+
+.tos-journey-rail {
+  position: relative;
+}
+
+.tos-journey-rail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--tos-champagne-gold) 45%, transparent),
+    transparent
+  );
+  opacity: 0.55;
+}
+
+.tos-bloom {
+  box-shadow: 0 0 24px var(--tos-light-bloom);
+}
+
+.tos-dof {
+  filter: blur(var(--tos-dof-blur));
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tos-ambience__wash,
   .tos-ambience__edge,
+  .tos-ambience__dust,
   .tos-write,
-  .tos-waiting {
+  .tos-waiting,
+  .tos-flow-line,
+  .tos-stream-flow {
     animation: none !important;
   }
 
@@ -212,6 +358,18 @@ body {
   .tos-ambience__edge {
     opacity: 0.15;
     background-position: 50% 0;
+  }
+
+  .tos-ambience__pointer {
+    opacity: 0;
+  }
+
+  .tos-lift:hover {
+    transform: none;
+  }
+
+  .tos-press:active {
+    transform: none;
   }
 
   body {

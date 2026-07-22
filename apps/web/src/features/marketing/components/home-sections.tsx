@@ -3,7 +3,7 @@ import {
   ARC,
   ENTERPRISE,
   FAQ,
-  SERVICE_CHAPTERS,
+  FEATURES,
   SITE,
   USE_CASES,
   WHY_ARC,
@@ -78,34 +78,23 @@ export function FeaturesSection() {
   return (
     <Section
       id="features"
-      eyebrow="A day in service"
-      title="Capabilities as chapters of the evening"
-      lead="Not a feature grid — four moments where hospitality and programmable settlement move as one."
+      eyebrow="Core MVP"
+      title="Six capabilities. Each earns its place in the evening."
+      lead="Hospitality on the surface. Programmable settlement underneath — reservations through treasury, without feature bloat."
     >
-      <div className="space-y-0">
-        {SERVICE_CHAPTERS.map((chapter, i) => (
-          <Reveal key={chapter.id} delay={i * 0.05}>
-            <article
-              className={
-                i === 0
-                  ? "border-t border-tos-border-subtle pt-10"
-                  : "mt-10 border-t border-tos-border-subtle pt-10"
-              }
-            >
-              <div className="grid gap-6 md:grid-cols-[7rem_1fr] md:gap-12">
-                <p className="text-xs tracking-[0.18em] text-tos-premium uppercase">{chapter.hour}</p>
-                <div>
-                  <h3 className="text-[length:var(--tos-text-heading)] font-medium text-tos-text-strong">
-                    {chapter.title}
-                  </h3>
-                  <p className="mt-3 max-w-2xl text-base leading-relaxed text-tos-text-muted">{chapter.body}</p>
-                  <p className="mt-4 text-xs tracking-[0.04em] text-tos-text-faint">{chapter.capability}</p>
-                </div>
-              </div>
-            </article>
+      <ol className="grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
+        {FEATURES.map((feature, i) => (
+          <Reveal key={feature.id} delay={i * 0.05}>
+            <li className="tos-lift border-t border-tos-border-subtle px-1 py-8 md:px-4">
+              <p className="font-mono text-[11px] tracking-[0.12em] text-tos-text-faint">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-3 text-base font-medium text-tos-text-strong">{feature.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-tos-text-muted">{feature.solution}</p>
+            </li>
           </Reveal>
         ))}
-      </div>
+      </ol>
     </Section>
   );
 }
@@ -115,14 +104,14 @@ export function UseCasesSection() {
     <Section
       id="use-cases"
       tone="subtle"
-      eyebrow="Use cases"
-      title="Built for premium inventory, not generic reservations"
-      lead="The beachhead is experiential dining. The company is condition-gated settlement."
+      eyebrow="Who it’s for"
+      title="Premium dining businesses"
+      lead="Restaurants, chef’s tables, luxury hotels, and dining event organizers — real-time, cross-border commerce without spreadsheet settlement."
     >
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {USE_CASES.map((u, i) => (
           <Reveal key={u.title} delay={i * 0.05}>
-            <div className="h-full">
+            <div className="tos-lift h-full border-t border-tos-border-subtle pt-5">
               <h3 className="text-base font-medium text-tos-text-strong">{u.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-tos-text-muted">{u.body}</p>
             </div>
@@ -190,11 +179,11 @@ export function CtaSection() {
         <div className="rounded-[var(--tos-radius-lg)] border border-tos-border bg-[var(--tos-ink-black)] px-8 py-14 text-center md:px-16">
           <p className="text-xs tracking-[0.2em] text-[var(--tos-champagne-gold)] uppercase">Next step</p>
           <h2 className="mx-auto mt-4 max-w-xl text-[length:var(--tos-text-title)] leading-tight text-[var(--tos-rice-white)]">
-            Feel the evening on a real product surface
+            See programmable money on a live surface
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm text-[var(--tos-ash-gray)]">
-            Request a walkthrough, or open the live guest and staff demos. Arc wiring stays honest — mock payments
-            today, adapters ready.
+            Request a walkthrough, or open the guest and staff demos. Arc wiring stays honest — mock payments today,
+            adapters ready for testnet.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link href="/contact">

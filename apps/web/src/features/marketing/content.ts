@@ -1,8 +1,8 @@
 export const SITE = {
   name: "TableOS",
-  tagline: "Programmable financial OS for premium dining.",
+  tagline: "The operating system of hospitality.",
   description:
-    "TableOS is a programmable financial operating system for premium dining businesses built on Arc. Accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
+    "TableOS makes service feel effortless — bookings, attendance, and programmable USDC settlement choreographed as one quiet evening workflow for premium dining on Arc.",
   url: "https://tableos-delta.vercel.app",
   github: "https://github.com/0xjiongying/tableos",
   demoBook: "/book/kintsugi",
@@ -45,7 +45,7 @@ export const NAV_LINKS = [
   { href: "/technology", label: "Technology" },
   { href: "/security", label: "Security" },
   { href: "/about", label: "About" },
-  { href: "/#demo", label: "Demo" },
+  { href: "/#lifecycle", label: "Demo" },
 ] as const;
 
 /** Core MVP — keep marketing feature lists aligned to these six only */
@@ -201,11 +201,11 @@ export const ENTERPRISE = [
 export const FAQ = [
   {
     q: "What is TableOS?",
-    a: "TableOS is a programmable financial operating system for premium dining businesses built on Arc. It turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — instead of treating payments as isolated transactions.",
+    a: "TableOS is the operating system of hospitality — with programmable USDC settlement underneath. Guests and staff feel a calm evening workflow; operators get escrow → attendance → split → treasury as one product path on Arc.",
   },
   {
     q: "Is TableOS a restaurant website builder?",
-    a: "No. TableOS is financial infrastructure for premium hospitality: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
+    a: "No. Dining is the beachhead skin, not a website builder or POS. TableOS choreographs service and condition-gated settlement so money and floor move together — without crypto chrome.",
   },
   {
     q: "Why programmable money?",
@@ -233,85 +233,111 @@ export const FAQ = [
   },
 ] as const;
 
-export const WORKFLOW_STEPS = [
+/** Payment lifecycle — programmable money as protagonist */
+export const LIFECYCLE_STEPS = [
   {
-    id: "create",
-    label: "Compose the evening",
-    detail: "Staff publish a scarce night — capacity, price, and the rules that will settle it.",
-    phase: "prepare" as const,
+    id: "reservation",
+    label: "Reservation",
+    state: "authorization" as const,
+    what: "Guest confirms the seat; payment is authorized in USDC.",
+    why: "Scarce inventory requires commitment before service begins.",
   },
   {
-    id: "reserve",
-    label: "Seat is claimed",
-    detail: "Guest reserves. Inventory locks. The house already knows who is coming.",
-    phase: "arrive" as const,
-  },
-  {
-    id: "pay",
-    label: "Funds arrive",
-    detail: "Guest pays in USDC. The payment binds to the reservation — quietly.",
-    phase: "arrive" as const,
+    id: "commitment",
+    label: "Commitment",
+    state: "authorization" as const,
+    what: "The payment intent binds to the reservation — trust begins.",
+    why: "Authorization is the first visible state of the financial workflow.",
   },
   {
     id: "escrow",
-    label: "Held until arrival",
-    detail: "Money waits in smart contract escrow. Not spent. Not forgotten. Ready for the door.",
-    phase: "wait" as const,
+    label: "Escrow",
+    state: "escrow" as const,
+    what: "Funds enter smart contract escrow as a secure hold.",
+    why: "Value is contained until the business condition is met — not a spinner, a vessel.",
   },
   {
-    id: "attend",
-    label: "Door acknowledges",
-    detail: "Attendance is attested. The condition that unlocks the night is recorded.",
-    phase: "acknowledge" as const,
+    id: "confirmation",
+    label: "Confirmation",
+    state: "confirmation" as const,
+    what: "Attendance (or policy) confirms the condition that unlocks release.",
+    why: "Settlement must be condition-gated, observable, and auditable.",
   },
   {
-    id: "settle",
-    label: "Settlement releases",
-    detail: "Held funds release under policy — designed for Arc’s deterministic USDC settlement.",
-    phase: "handoff" as const,
+    id: "settlement",
+    label: "Settlement",
+    state: "settlement" as const,
+    what: "Escrow unlocks; funds move with certainty on Arc.",
+    why: "Deterministic finality makes release settlement-grade, not probabilistic.",
   },
   {
-    id: "split",
-    label: "House and partners",
-    detail: "Revenue distributes in one pass. No spreadsheet chase after service.",
-    phase: "handoff" as const,
+    id: "distribution",
+    label: "Revenue distribution",
+    state: "distribution" as const,
+    what: "Streams split to restaurant, chef, venue, and organizer by rule.",
+    why: "Multi-party evenings should settle as one workflow — not spreadsheet payouts.",
   },
   {
     id: "treasury",
-    label: "Evening closes",
-    detail: "Real-time treasury reflects the same truth ops just lived. Finance and floor agree.",
-    phase: "complete" as const,
+    label: "Treasury update",
+    state: "treasury" as const,
+    what: "Held and settled balances rebalance into the live treasury view.",
+    why: "Operators need cash position as truth, not month-end archaeology.",
+  },
+  {
+    id: "insight",
+    label: "Business insights",
+    state: "forecast" as const,
+    what: "AI treasury assistant summarizes what changed and what’s next.",
+    why: "Intelligence explains the stream — never chat-first robot chrome.",
   },
 ] as const;
 
-/** Editorial chapters — map to MVP capabilities without feature bloat */
+/** @deprecated Prefer LIFECYCLE_STEPS — kept for any residual imports */
+export const WORKFLOW_STEPS = LIFECYCLE_STEPS.map((s) => ({
+  id: s.id,
+  label: s.label,
+  detail: s.what,
+  phase:
+    s.state === "authorization"
+      ? ("arrive" as const)
+      : s.state === "escrow"
+        ? ("wait" as const)
+        : s.state === "confirmation"
+          ? ("acknowledge" as const)
+          : s.state === "settlement" || s.state === "distribution"
+            ? ("handoff" as const)
+            : ("complete" as const),
+}));
+
+/** Scroll / product chapters — payment lifecycle under premium dining setting */
 export const SERVICE_CHAPTERS = [
   {
-    id: "morning",
-    hour: "Morning",
-    title: "The book is set",
-    body: "Premium dining event inventory, price, and settlement rules are composed before the first guest thinks of dinner. Ops sees clarity; guests never see the ledger.",
-    capability: "Premium dining event reservations",
+    id: "reservation",
+    hour: "01",
+    title: "Reservation & authorization",
+    body: "The guest commits. USDC payment is authorized and bound to scarce inventory — trust begins as a financial state, not a booking receipt.",
+    capability: "Premium dining event reservations · USDC on Arc",
   },
   {
-    id: "booking",
-    hour: "Afternoon",
-    title: "A seat is held",
-    body: "The guest claims a scarce place. USDC arrives on Arc and waits in smart contract escrow — held until attendance, spoken in hospitality language, not wallet theatre.",
-    capability: "USDC payments on Arc · smart contract escrow",
+    id: "escrow",
+    hour: "02",
+    title: "Escrow",
+    body: "Funds enter smart contract escrow as a secure transition. Value is contained and visible — a vessel, never a spinner.",
+    capability: "Smart contract escrow",
   },
   {
-    id: "service",
-    hour: "Service",
-    title: "The door opens the night",
-    body: "Attendance is the condition. One quiet acknowledgment at the door turns held funds into settlement — every payment becomes an automated financial workflow.",
-    capability: "Automatic revenue distribution",
+    id: "settlement",
+    hour: "03",
+    title: "Settlement & distribution",
+    body: "On confirmation, escrow unlocks. Streams split to restaurant, chef, venue, and organizer — one payment becomes many paths.",
+    capability: "Settlement · automatic revenue distribution",
   },
   {
-    id: "close",
-    hour: "Close",
-    title: "Partners are paid; the house rests",
-    body: "Revenue distributes and the real-time treasury updates with the evening. Managers brief in seconds via the AI-powered treasury assistant.",
+    id: "treasury",
+    hour: "04",
+    title: "Treasury intelligence",
+    body: "Cash position updates in real time. The AI treasury assistant explains what changed and offers a quiet forecast — summaries, not chatbots.",
     capability: "Real-time treasury · AI treasury assistant",
   },
 ] as const;

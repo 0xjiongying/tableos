@@ -1,8 +1,10 @@
 # TableOS
 
-**Quiet technology for the world’s finest tables.**
+**Programmable financial OS for premium dining businesses — built on Arc.**
 
-TableOS is an AI-native restaurant operating system shell with a **settlement-grade payments core**: premium event reservation → held funds (escrow) → attendance verification → release & split. The company thesis (IC Gate) is **condition-gated commercial settlement**; premium dining is the beachhead skin.
+TableOS enables restaurants, chef’s tables, luxury hotels, and dining event organizers to accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money. Every payment becomes an automated financial workflow — reservation → escrow → settlement → revenue share → treasury — not an isolated transaction.
+
+**Core MVP:** premium dining event reservations · USDC payments on Arc · smart contract escrow · automatic revenue distribution · real-time treasury dashboard · AI-powered treasury assistant.
 
 | Layer | Status |
 |---|---|

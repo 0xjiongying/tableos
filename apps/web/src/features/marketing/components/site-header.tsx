@@ -22,7 +22,7 @@ export function SiteHeader() {
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((l) => {
-            const active = l.href !== "/#demo" && pathname === l.href;
+            const active = !l.href.includes("#") && pathname === l.href;
             return (
               <Link
                 key={l.href}

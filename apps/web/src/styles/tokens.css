@@ -174,10 +174,48 @@
   /* Rare focus ring only — soft, not SaaS glow */
   --tos-focus-ring: 0 0 0 2px var(--tos-bg), 0 0 0 4px var(--tos-deep-forest);
 
+  /* ─── Experience: depth / lighting / materials / shadow ─── */
+  --tos-depth-0: 0;
+  --tos-depth-1: 1;
+  --tos-depth-2: 2;
+  --tos-depth-3: 3;
+  --tos-depth-fg: 4;
+  --tos-z-ambience: 0;
+  --tos-z-shell: 1;
+  --tos-z-sticky: 20;
+  --tos-z-overlay: 40;
+  --tos-parallax-bg: 0.12;
+  --tos-parallax-mid: 0.06;
+  --tos-parallax-fg: -0.04;
+  --tos-parallax-type: 0.02;
+
+  --tos-light-ambient: color-mix(in oklab, var(--tos-champagne-gold) 8%, transparent);
+  --tos-light-key: color-mix(in oklab, var(--tos-rice-white) 55%, transparent);
+  --tos-light-rim: color-mix(in oklab, var(--tos-champagne-gold) 22%, transparent);
+  --tos-light-pointer: color-mix(in oklab, var(--tos-champagne-gold) 14%, transparent);
+  --tos-light-bloom: color-mix(in oklab, var(--tos-champagne-gold) 12%, transparent);
+  --tos-grain-opacity: 0.028;
+  --tos-dust-opacity: 0.045;
+  --tos-dof-blur: 0.6px;
+
+  --tos-mat-paper: var(--tos-surface);
+  --tos-mat-paper-edge: var(--tos-border-subtle);
+  --tos-mat-glass: color-mix(in oklab, var(--tos-mist-white) 72%, transparent);
+  --tos-mat-glass-blur: 10px;
+  --tos-mat-ceramic: var(--tos-surface-raised);
+  --tos-mat-ink: var(--tos-ink-black);
+
+  --tos-shadow-ambient: 0 1px 0 color-mix(in oklab, var(--tos-ink-black) 3.5%, transparent);
+  --tos-shadow-lift: 0 8px 28px color-mix(in oklab, var(--tos-ink-black) 6%, transparent),
+    0 1px 0 color-mix(in oklab, var(--tos-ink-black) 4%, transparent);
+  --tos-shadow-press: 0 1px 0 color-mix(in oklab, var(--tos-ink-black) 5%, transparent);
+  --tos-shadow-soft: 0 1px 0 color-mix(in oklab, var(--tos-ink-black) 4%, transparent);
+
   /* ─── Motion ─── */
   --tos-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --tos-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
   --tos-ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --tos-ease-camera: cubic-bezier(0.65, 0, 0.35, 1);
   --tos-duration-instant: 100ms;
   --tos-duration-fast: 180ms;
   --tos-duration-normal: 280ms;
@@ -186,6 +224,9 @@
   --tos-duration-breath: 8s;
   --tos-duration-edge: 6.5s;
   --tos-duration-write: 900ms;
+  --tos-duration-camera: 700ms;
+  --tos-duration-counter: 900ms;
+  --tos-stagger-step: 70ms;
 
   /* Hospitality motion primitives — service choreography, never bounce */
   --tos-arrive-duration: var(--tos-duration-slow);
@@ -217,7 +258,6 @@
   --tos-border-ceramic: 1px solid var(--tos-border);
   --tos-border-linen: 1px solid var(--tos-border-subtle);
   --tos-hairline-gold: 1px solid color-mix(in oklab, var(--tos-champagne-gold) 55%, var(--tos-warm-stone));
-  --tos-shadow-soft: 0 1px 0 color-mix(in oklab, var(--tos-ink-black) 4%, transparent);
 }
 
 /* Morning — warm daylight */
@@ -228,6 +268,7 @@ html[data-tod="morning"] {
   --tos-tod-glow: color-mix(in oklab, var(--tos-bamboo) 10%, transparent);
   --tos-bg: color-mix(in oklab, var(--tos-rice-white) 92%, #fff6e8);
   --tos-bg-subtle: color-mix(in oklab, var(--tos-warm-ivory) 88%, #f5e6c8);
+  --tos-light-ambient: color-mix(in oklab, var(--tos-champagne-gold) 10%, transparent);
 }
 
 /* Afternoon — neutral calm (default) */
@@ -247,6 +288,8 @@ html[data-tod="evening"] {
   --tos-bg: color-mix(in oklab, var(--tos-rice-white) 86%, #f0e4d0);
   --tos-bg-subtle: color-mix(in oklab, var(--tos-warm-ivory) 82%, #e8d4b4);
   --tos-border-accent: color-mix(in oklab, var(--tos-champagne-gold) 70%, var(--tos-warm-stone));
+  --tos-light-ambient: color-mix(in oklab, var(--tos-brushed-brass) 12%, transparent);
+  --tos-light-bloom: color-mix(in oklab, var(--tos-champagne-gold) 16%, transparent);
 }
 
 /* Night — quiet graphite (still matte hospitality, not crypto dark) */
@@ -259,6 +302,7 @@ html[data-tod="night"] {
   --tos-bg: color-mix(in oklab, var(--tos-rice-white) 94%, #d8d4ce);
   --tos-bg-subtle: color-mix(in oklab, var(--tos-warm-ivory) 90%, #cfc9c0);
   --tos-text-muted: color-mix(in oklab, var(--tos-warm-gray) 92%, var(--tos-charcoal));
+  --tos-light-ambient: color-mix(in oklab, var(--tos-charcoal) 6%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -271,10 +315,20 @@ html[data-tod="night"] {
     --tos-duration-breath: 0ms;
     --tos-duration-edge: 0ms;
     --tos-duration-write: 0ms;
+    --tos-duration-camera: 0ms;
+    --tos-duration-counter: 0ms;
+    --tos-stagger-step: 0ms;
     --tos-arrive-duration: 0ms;
     --tos-acknowledge-duration: 0ms;
     --tos-handoff-duration: 0ms;
     --tos-complete-duration: 0ms;
     --tos-waiting-duration: 0ms;
+    --tos-parallax-bg: 0;
+    --tos-parallax-mid: 0;
+    --tos-parallax-fg: 0;
+    --tos-parallax-type: 0;
+    --tos-dof-blur: 0px;
+    --tos-grain-opacity: 0.02;
+    --tos-dust-opacity: 0;
   }
 }

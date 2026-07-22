@@ -42,8 +42,8 @@ export function ProblemSection() {
       id="problem"
       tone="subtle"
       eyebrow="Problem"
-      title="Current rails were not built for conditioned evenings"
-      lead="Banks and cards settle isolated transactions. Premium dining needs payments that become automated financial workflows — hold, settle, distribute, update treasury."
+      title="Isolated payments cannot run a financial workflow"
+      lead="Banks and cards authorize transactions. Premium dining needs value that escrows, settles, distributes, and updates treasury — continuously, observably, on Arc."
     >
       <div className="grid gap-8 lg:grid-cols-2">
         <Reveal>
@@ -101,15 +101,17 @@ export function SolutionSection() {
     <Section
       id="solution"
       eyebrow="Solution"
-      title="From payment to financial workflow"
-      lead="Reserve, escrow on Arc, acknowledge attendance, distribute revenue, refresh treasury — one programmable path."
+      title="Value Streams — money you can follow"
+      lead="Authorize, contain in escrow, settle with certainty, split to parties, pool into treasury, explain the change. Automation without opacity."
     >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { t: "Escrow", d: "USDC waits in smart contract escrow." },
-          { t: "Acknowledge", d: "Attendance unlocks release." },
-          { t: "Distribute", d: "Revenue shares move with settlement." },
-          { t: "Treasury", d: "Real-time balances match the night." },
+          { t: "Authorization", d: "Payment commits; the stream begins." },
+          { t: "Escrow", d: "Value holds in a visible vessel — not a spinner." },
+          { t: "Settlement", d: "Escrow unlocks; funds move with certainty." },
+          { t: "Distribution", d: "Streams fork to house, chef, venue, organizer." },
+          { t: "Treasury", d: "Balances pool into live cash position." },
+          { t: "Insight", d: "AI explains what changed — never chat-first." },
         ].map((item, i) => (
           <Reveal key={item.t} delay={i * 0.05}>
             <div className="rounded-[var(--tos-radius-md)] bg-tos-bg-subtle/90 px-5 py-6">

@@ -17,12 +17,12 @@ export default function ProductPage() {
       <Section
         eyebrow="Product"
         title="Financial workflows, not isolated payments"
-        lead="TableOS turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — for restaurants, chef’s tables, luxury hotels, and dining event organizers."
+        lead="TableOS turns every payment into an automated financial workflow — authorization, escrow, settlement, revenue distribution, treasury — for restaurants, chef’s tables, luxury hotels, and dining event organizers."
       >
         <Reveal>
           <div className="flex flex-wrap gap-3">
-            <Link href="/#demo">
-              <Button>Watch the evening</Button>
+            <Link href="/#lifecycle">
+              <Button>Follow Value Streams</Button>
             </Link>
             <Link href={SITE.demoBook}>
               <Button variant="secondary">Live guest demo</Button>
@@ -51,9 +51,9 @@ export default function ProductPage() {
       </Section>
 
       <Section
-        eyebrow="A day in service"
-        title="What ships, told as chapters"
-        lead="Four moments. Each ties the evening to programmable settlement on Arc."
+        eyebrow="Payment lifecycle"
+        title="What ships, told as financial chapters"
+        lead="Four beats. Premium dining is the setting; programmable money is the story."
       >
         <div className="space-y-10">
           {SERVICE_CHAPTERS.map((chapter) => (

@@ -1,35 +1,46 @@
 # TableOS — Pitch Outline (Hackathon / Investor)
 
+## What it is
+
+**TableOS** is a programmable financial operating system for premium dining businesses built on Arc.
+
 ## Problem
 
-High-ticket experiential dining sells irreversible prep. Card deposits are partial and reversible; collaboration splits are offline; settlement is slow.
+Premium hospitality still treats payments as isolated transactions. Deposits, attendance conditions, partner splits, and treasury live in separate tools — then finance reconciles by hand. Cards authorize; they do not execute the business logic of the night.
 
 ## Solution
 
-Condition-gated settlement for premium evenings:
+Every payment becomes an automated financial workflow:
 
-**Book → hold funds → verify attendance → release & split**
+**Reserve → USDC on Arc → smart contract escrow → attendance → automatic revenue distribution → real-time treasury**
 
-Packaged as a quiet restaurant OS (Japanese luxury UX), not a crypto checkout.
+Built on Arc’s stablecoin-native infrastructure to simplify operations, reduce manual reconciliation, and enable real-time, cross-border commerce for premium hospitality.
 
-## Why now
+## Who it’s for
 
-- Stablecoin / Arc rails make dollar-native programmable escrow practical  
-- Premium prepaid inventory already exists (Tock-class) but not settlement-native  
-- AI reduces ops friction for small elite teams  
+Restaurants · chef’s tables · luxury hotels · dining event organizers
 
-## Product wedge
+## Core MVP
 
-Michelin / chef’s counter / hotel private dining — beachhead for a broader **Condition-Gated Settlement OS** (IC Gate).
+1. Premium dining event reservations  
+2. USDC payments on Arc  
+3. Smart contract escrow  
+4. Automatic revenue distribution  
+5. Real-time treasury dashboard  
+6. AI-powered treasury assistant  
+
+## Why Arc
+
+Circle’s stablecoin-native EVM L1 — USDC as primary gas, ~780ms deterministic finality (Malachite BFT), institutional settlement primitives. Verified testnet facts stay on the Technology page; TableOS does not fake on-chain success.
 
 ## Demo proof
 
 Working vertical slice with mock payments + Arc adapter scaffold + real AI port.
 
-## Business
+## Trajectory
 
-SaaS + take-rate on settled GMV (see `docs/finance/UNIT_ECONOMICS.md`). Hospitality is distribution, not the ceiling.
+Hackathon MVP → enterprise-grade financial infrastructure for the global premium hospitality industry.
 
 ## Ask
 
-Design partners / LOIs for 3 premium venues; Arc ecosystem intro for testnet settlement path; feedback on custody/compliance framing.
+Design partners / LOIs for premium venues; Arc ecosystem intro for testnet settlement path; feedback on custody/compliance framing.

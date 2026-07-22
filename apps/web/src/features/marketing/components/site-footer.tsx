@@ -6,7 +6,7 @@ const columns = [
     title: "Product",
     links: [
       { href: "/product", label: "Overview" },
-      { href: "/#demo", label: "Workflow demo" },
+      { href: "/#lifecycle", label: "Value Streams" },
       { href: "/#features", label: "MVP features" },
       { href: SITE.demoBook, label: "Guest booking" },
     ],
@@ -75,7 +75,7 @@ export function SiteFooter() {
       <div className="border-t border-tos-border-subtle">
         <div className="mx-auto flex max-w-[72rem] flex-col gap-2 px-6 py-6 text-xs text-tos-text-faint md:flex-row md:items-center md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} TableOS. The operating system of hospitality.</p>
-          <p>Settlement underneath · hospitality on the surface.</p>
+          <p>Settlement underneath · hospitality on the surface · Arc / USDC</p>
         </div>
       </div>
     </footer>
