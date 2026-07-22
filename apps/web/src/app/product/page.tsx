@@ -8,7 +8,7 @@ import { FEATURES, SERVICE_CHAPTERS, SITE } from "@/features/marketing/content";
 export const metadata: Metadata = {
   title: "Product",
   description:
-    "TableOS product — programmable financial OS for premium dining: USDC on Arc, smart contract escrow, automatic revenue distribution, and real-time treasury.",
+    "TableOS product — programmable financial OS for the hospitality industry: USDC on Arc, smart contract escrow, automatic revenue distribution, and real-time treasury.",
 };
 
 export default function ProductPage() {
@@ -17,7 +17,7 @@ export default function ProductPage() {
       <Section
         eyebrow="Product"
         title="Financial workflows, not isolated payments"
-        lead="TableOS turns every payment into an automated financial workflow — authorization, escrow, settlement, revenue distribution, treasury — for restaurants, chef’s tables, luxury hotels, and dining event organizers."
+        lead="TableOS turns every payment into an automated financial workflow — authorization, escrow, settlement, revenue distribution, treasury — for premium restaurants, luxury hotels, tourism businesses, and dining event organizers."
       >
         <Reveal>
           <div className="flex flex-wrap gap-3">
@@ -35,7 +35,7 @@ export default function ProductPage() {
         tone="subtle"
         eyebrow="Core MVP"
         title="Six capabilities. No feature bloat."
-        lead="The MVP proves programmable money for premium dining end to end on Arc."
+        lead="The MVP proves programmable money for hospitality end to end on Arc — starting with premium dining."
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature, i) => (

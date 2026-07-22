@@ -134,7 +134,7 @@ Premium dining sells **scarce, high-value inventory** (a table at a specific tim
 
 ### Executive summary
 
-TableOS is a **programmable financial operating system for premium hospitality**, starting with one killer workflow: **prepaid event reservation → Arc USDC escrow → attendance verification → automatic release & revenue split → treasury update**.
+TableOS is a **programmable financial operating system for the hospitality industry**, starting with premium restaurants, luxury hotels, and tourism businesses — and one killer beachhead workflow: **prepaid event reservation → Arc USDC escrow → attendance verification → automatic release & revenue split → treasury update**.
 
 We are not building a restaurant website, NFT gallery, or crypto-themed booking toy. We are building the **settlement layer** for high-ticket dining inventory where money must be certain before service and divisible after service. Arc is required because the product needs **native USDC, predictable dollar-denominated fees, deterministic settlement, and programmable escrow/split** — properties that card processors and generic L2 gas markets do not cleanly provide for this workflow.
 

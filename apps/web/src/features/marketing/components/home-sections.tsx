@@ -105,10 +105,10 @@ export function UseCasesSection() {
       id="use-cases"
       tone="subtle"
       eyebrow="Who it’s for"
-      title="Premium dining businesses"
-      lead="Restaurants, chef’s tables, luxury hotels, and dining event organizers — real-time, cross-border commerce without spreadsheet settlement."
+      title="Hospitality businesses"
+      lead="Premium restaurants, chef’s tables, luxury hotels, tourism and travel experiences, and dining event organizers — real-time, cross-border commerce without spreadsheet settlement."
     >
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {USE_CASES.map((u, i) => (
           <Reveal key={u.title} delay={i * 0.05}>
             <div className="tos-lift h-full border-t border-tos-border-subtle pt-5">

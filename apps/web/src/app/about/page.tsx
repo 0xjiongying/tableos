@@ -8,7 +8,7 @@ import { ARC, SITE } from "@/features/marketing/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About TableOS — a programmable financial operating system for premium dining businesses built on Arc.",
+    "About TableOS — a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses.",
 };
 
 export default function AboutPage() {
@@ -16,8 +16,8 @@ export default function AboutPage() {
     <MarketingShell>
       <Section
         eyebrow="About"
-        title="Programmable money for premium hospitality"
-        lead="TableOS is a programmable financial operating system for premium dining businesses built on Arc. It enables restaurants, chef’s tables, luxury hotels, and dining event organizers to accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money."
+        title="Programmable money for the hospitality industry"
+        lead="TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc — accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money."
       >
         <Reveal>
           <div className="prose-none max-w-2xl space-y-4 text-sm leading-relaxed text-tos-text-muted">

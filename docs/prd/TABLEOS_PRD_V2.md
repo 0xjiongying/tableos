@@ -9,7 +9,7 @@
 
 ## One-sentence value (beachhead)
 
-**TableOS lets premium restaurants sell scarce evenings with funds held until attendance, then released and split — wrapped in a calm restaurant OS guests and staff already understand.**
+**TableOS lets premium restaurants, luxury hotels, and tourism businesses sell scarce hospitality evenings with funds held until attendance, then released and split — wrapped in a calm product surface guests and staff already understand.**
 
 ## Company one-sentence (IC)
 

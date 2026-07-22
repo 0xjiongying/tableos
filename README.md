@@ -1,8 +1,8 @@
 # TableOS
 
-**Programmable financial OS for premium dining businesses — built on Arc.**
+**Programmable financial OS for the hospitality industry — built on Arc.**
 
-TableOS enables restaurants, chef’s tables, luxury hotels, and dining event organizers to accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money. Every payment becomes an automated financial workflow — reservation → escrow → settlement → revenue share → treasury — not an isolated transaction.
+TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money. Every payment becomes an automated financial workflow — reservation → escrow → settlement → revenue share → treasury — not an isolated transaction.
 
 **Core MVP:** premium dining event reservations · USDC payments on Arc · smart contract escrow · automatic revenue distribution · real-time treasury dashboard · AI-powered treasury assistant.
 

@@ -2,7 +2,7 @@
 
 ## What it is
 
-**TableOS** is a programmable financial operating system for premium dining businesses built on Arc.
+**TableOS** is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses — built on Arc.
 
 ## Problem
 
@@ -18,7 +18,7 @@ Built on Arc’s stablecoin-native infrastructure to simplify operations, reduce
 
 ## Who it’s for
 
-Restaurants · chef’s tables · luxury hotels · dining event organizers
+Restaurants · chef’s tables · luxury hotels · tourism & travel experiences · dining event organizers
 
 ## Core MVP
 

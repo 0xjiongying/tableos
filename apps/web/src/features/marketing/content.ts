@@ -1,8 +1,8 @@
 export const SITE = {
   name: "TableOS",
-  tagline: "Programmable financial OS for premium dining.",
+  tagline: "Programmable financial OS for the hospitality industry.",
   description:
-    "TableOS is a programmable financial operating system for premium dining businesses built on Arc. Accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
+    "TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc — accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
   url: "https://tableos-delta.vercel.app",
   github: "https://github.com/0xjiongying/tableos",
   demoBook: "/book/kintsugi",
@@ -120,7 +120,7 @@ export const FEATURES = [
 
 export const USE_CASES = [
   {
-    title: "Restaurants",
+    title: "Premium restaurants",
     body: "Run high-ticket tasting and private-dining inventory with USDC payment, escrow, and treasury in one financial workflow.",
   },
   {
@@ -128,12 +128,16 @@ export const USE_CASES = [
     body: "Sell scarce chef-led seats with funds held until attendance, then settle the house without spreadsheet payouts.",
   },
   {
-    title: "Luxury hotels",
+    title: "Luxury hotels & resorts",
     body: "Coordinate hotel F&B and visiting talent with automatic revenue distribution and a live treasury view.",
   },
   {
     title: "Dining event organizers",
     body: "Treat each residency or collaboration night as programmable money — reserve, escrow, distribute, update treasury.",
+  },
+  {
+    title: "Tourism & travel experiences",
+    body: "Settle conditioned guest experiences — deposits, attendance, and partner splits — as programmable money across destinations.",
   },
 ] as const;
 
@@ -190,7 +194,7 @@ export const ENTERPRISE = [
   },
   {
     title: "Scalability",
-    body: "Built for premium dining businesses today; designed to evolve into enterprise-grade financial infrastructure for global premium hospitality.",
+    body: "Built for the hospitality industry today — premium restaurants, luxury hotels, and tourism — designed to evolve into enterprise-grade financial infrastructure for global premium hospitality.",
   },
   {
     title: "Availability & transparency",
@@ -201,15 +205,15 @@ export const ENTERPRISE = [
 export const FAQ = [
   {
     q: "What is TableOS?",
-    a: "TableOS is a programmable financial operating system for premium dining businesses built on Arc. It turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — instead of treating payments as isolated transactions.",
+    a: "TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc, it turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — instead of treating payments as isolated transactions.",
   },
   {
     q: "Is TableOS a restaurant website builder?",
-    a: "No. TableOS is financial infrastructure for premium hospitality: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
+    a: "No. TableOS is financial infrastructure for the hospitality industry: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
   },
   {
     q: "Why programmable money?",
-    a: "Premium dining already sells conditioned obligations: seats, deposits, partner splits. Programmable USDC on Arc lets those conditions execute automatically — simplifying operations, reducing manual reconciliation, and enabling real-time, cross-border commerce.",
+    a: "Premium hospitality already sells conditioned obligations: seats, deposits, partner splits, and guest experiences. Programmable USDC on Arc lets those conditions execute automatically — simplifying operations, reducing manual reconciliation, and enabling real-time, cross-border commerce.",
   },
   {
     q: "Why Arc?",
@@ -225,7 +229,7 @@ export const FAQ = [
   },
   {
     q: "Who is this for?",
-    a: "Restaurants, chef’s tables, luxury hotels, and dining event organizers — premium dining businesses that need programmable money for payments, escrow, revenue distribution, and treasury.",
+    a: "Premium restaurants, chef’s tables, luxury hotels, resorts, tourism and travel experiences, dining event organizers, private dining clubs, and event venues — hospitality businesses that need programmable money for payments, escrow, revenue distribution, and treasury.",
   },
   {
     q: "What ships today?",

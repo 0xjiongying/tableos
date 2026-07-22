@@ -2,7 +2,7 @@
   "name": "tableos",
   "private": true,
   "version": "0.1.0",
-  "description": "TableOS — AI-native restaurant OS with settlement-grade payments (premium dining beachhead)",
+  "description": "TableOS — programmable financial OS for the hospitality industry (premium restaurants, luxury hotels, tourism)",
   "packageManager": "pnpm@10.33.2",
   "scripts": {
     "dev": "pnpm --filter @tableos/web dev",

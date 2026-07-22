@@ -10,11 +10,11 @@
 
 TableOS is **not** a POS, reservation tool, or payment gateway.
 
-It is a **programmable financial operating system for premium dining businesses**.
+It is a **programmable financial operating system for the hospitality industry**, starting with premium restaurants, luxury hotels, and tourism businesses.
 
 Every payment becomes an intelligent financial workflow. The interface makes **programmable money** tangible, trustworthy, and effortless.
 
-**Premium dining is the setting. Programmable money is the protagonist.**
+**Hospitality is the setting. Programmable money is the protagonist.**
 
 ---
 

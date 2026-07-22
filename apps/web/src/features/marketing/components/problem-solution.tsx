@@ -6,14 +6,14 @@ export function ProductValueSection() {
     <Section
       id="product"
       eyebrow="Product"
-      title="Programmable financial OS for premium dining"
+      title="Programmable financial OS for hospitality"
       lead="Built on Arc — accept USDC, automate escrow, distribute revenue instantly, and manage treasury through programmable money."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {[
           {
             title: "Who it serves",
-            body: "Restaurants, chef’s tables, luxury hotels, and dining event organizers running scarce, high-ticket inventory.",
+            body: "Premium restaurants, chef’s tables, luxury hotels, tourism businesses, and dining event organizers running scarce, high-ticket inventory.",
           },
           {
             title: "Why it matters",

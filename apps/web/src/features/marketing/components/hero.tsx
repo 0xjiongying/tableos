@@ -115,7 +115,7 @@ export function HeroSection() {
             </Link>
           </div>
           <p className="mt-8 text-xs text-tos-text-faint">
-            Restaurants · chef’s tables · luxury hotels · dining events ·{" "}
+            Premium restaurants · luxury hotels · tourism · dining events ·{" "}
             <Link href={SITE.demoBook} className="underline-offset-2 hover:underline">
               Try guest book
             </Link>
