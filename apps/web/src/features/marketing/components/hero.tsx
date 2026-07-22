@@ -97,8 +97,8 @@ export function HeroSection() {
                 })}
             className="mt-5 max-w-lg text-base text-tos-text-muted md:text-lg"
           >
-            Technology disappears into the evening — seats held, arrival acknowledged, programmable money
-            settled — so service feels exactly where it should be.
+            Every payment becomes an intelligent financial workflow — authorize, escrow, settle, distribute,
+            and update treasury on Arc. Programmable money you can see.
           </motion.p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href="/contact">
@@ -109,13 +109,13 @@ export function HeroSection() {
             </Link>
             <Link href="/#lifecycle">
               <Button size="lg" variant="secondary">
-                Watch the evening
+                Follow the value
                 <ArrowDownRight className="h-4 w-4" aria-hidden />
               </Button>
             </Link>
           </div>
           <p className="mt-8 text-xs text-tos-text-faint">
-            Luxury dining · condition-gated settlement on Arc ·{" "}
+            Restaurants · chef’s tables · luxury hotels · dining events ·{" "}
             <Link href={SITE.demoBook} className="underline-offset-2 hover:underline">
               Try guest book
             </Link>

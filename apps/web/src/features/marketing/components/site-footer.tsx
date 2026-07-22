@@ -74,8 +74,8 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-tos-border-subtle">
         <div className="mx-auto flex max-w-[72rem] flex-col gap-2 px-6 py-6 text-xs text-tos-text-faint md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} TableOS. The operating system of hospitality.</p>
-          <p>Settlement underneath · hospitality on the surface · Arc / USDC</p>
+          <p>© {new Date().getFullYear()} TableOS. Programmable financial OS for premium dining.</p>
+          <p>Built on Arc · Settled in USDC</p>
         </div>
       </div>
     </footer>

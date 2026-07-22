@@ -1,8 +1,8 @@
 export const SITE = {
   name: "TableOS",
-  tagline: "The operating system of hospitality.",
+  tagline: "Programmable financial OS for premium dining.",
   description:
-    "TableOS makes service feel effortless — bookings, attendance, and programmable USDC settlement choreographed as one quiet evening workflow for premium dining on Arc.",
+    "TableOS is a programmable financial operating system for premium dining businesses built on Arc. Accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
   url: "https://tableos-delta.vercel.app",
   github: "https://github.com/0xjiongying/tableos",
   demoBook: "/book/kintsugi",
@@ -201,11 +201,11 @@ export const ENTERPRISE = [
 export const FAQ = [
   {
     q: "What is TableOS?",
-    a: "TableOS is the operating system of hospitality — with programmable USDC settlement underneath. Guests and staff feel a calm evening workflow; operators get escrow → attendance → split → treasury as one product path on Arc.",
+    a: "TableOS is a programmable financial operating system for premium dining businesses built on Arc. It turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — instead of treating payments as isolated transactions.",
   },
   {
     q: "Is TableOS a restaurant website builder?",
-    a: "No. Dining is the beachhead skin, not a website builder or POS. TableOS choreographs service and condition-gated settlement so money and floor move together — without crypto chrome.",
+    a: "No. TableOS is financial infrastructure for premium hospitality: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
   },
   {
     q: "Why programmable money?",

@@ -17,7 +17,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-[72rem] items-center justify-between gap-4 px-6 md:px-8">
         <Link href="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
           <span className="text-base font-medium tracking-[-0.02em] text-tos-text-strong">{SITE.name}</span>
-          <span className="hidden text-xs text-tos-text-faint sm:inline">Hospitality OS</span>
+          <span className="hidden text-xs text-tos-text-faint sm:inline">Financial OS</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
