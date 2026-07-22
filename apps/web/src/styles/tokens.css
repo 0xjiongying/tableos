@@ -1,0 +1,202 @@
+/**
+ * TableOS Design Tokens — Luxury Japanese Hospitality
+ * Source of truth for CSS custom properties.
+ * Bright, calm, matte. No neon status colors. Soft tonal elevation only.
+ *
+ * Pair with: docs/design/TABLEOS_DESIGN_SYSTEM.md
+ * Canvas: ~/.cursor/projects/c-Projects-tableos/canvases/tableos-design-system.canvas.tsx
+ */
+
+:root {
+  /* ─── Primitive: Primary (bright warm neutrals) ─── */
+  --tos-warm-ivory: #f7f3eb;
+  --tos-warm-ivory-oklch: oklch(0.961 0.012 95);
+  --tos-rice-white: #faf8f4;
+  --tos-rice-white-oklch: oklch(0.978 0.008 95);
+  --tos-soft-pearl: #f3efe8;
+  --tos-soft-pearl-oklch: oklch(0.948 0.01 90);
+  --tos-mist-white: #f9f7f4;
+  --tos-mist-white-oklch: oklch(0.975 0.006 90);
+  --tos-natural-linen: #ede6db;
+  --tos-natural-linen-oklch: oklch(0.928 0.015 90);
+
+  /* ─── Primitive: Secondary ─── */
+  --tos-light-sand: #e8dfd0;
+  --tos-light-sand-oklch: oklch(0.908 0.02 85);
+  --tos-warm-stone: #d4cbc0;
+  --tos-warm-stone-oklch: oklch(0.848 0.015 80);
+  --tos-ash-gray: #b8b0a6;
+  --tos-ash-gray-oklch: oklch(0.748 0.012 80);
+  --tos-pale-taupe: #c9bdb0;
+  --tos-pale-taupe-oklch: oklch(0.798 0.02 70);
+  --tos-soft-clay: #c4a99a;
+  --tos-soft-clay-oklch: oklch(0.758 0.03 55);
+
+  /* ─── Primitive: Natural accents (sparingly) ─── */
+  --tos-sage: #8b9a7d;
+  --tos-sage-oklch: oklch(0.658 0.04 130);
+  --tos-bamboo: #a8b89a;
+  --tos-bamboo-oklch: oklch(0.748 0.04 125);
+  --tos-matcha: #6b7f5a;
+  --tos-matcha-oklch: oklch(0.548 0.06 130);
+  --tos-moss: #5a6b4f;
+  --tos-moss-oklch: oklch(0.478 0.05 135);
+  --tos-deep-forest: #3d4a38;
+  --tos-deep-forest-oklch: oklch(0.348 0.035 140);
+
+  /* ─── Primitive: Premium accents (understated, matte) ─── */
+  --tos-champagne-gold: #c4b08a;
+  --tos-champagne-gold-oklch: oklch(0.758 0.04 85);
+  --tos-brushed-brass: #a8926c;
+  --tos-brushed-brass-oklch: oklch(0.678 0.05 80);
+  --tos-warm-bronze: #8b7355;
+  --tos-warm-bronze-oklch: oklch(0.548 0.04 75);
+
+  /* ─── Primitive: Text ─── */
+  --tos-ink-black: #1a1917;
+  --tos-ink-black-oklch: oklch(0.198 0.008 85);
+  --tos-charcoal: #2c2a26;
+  --tos-charcoal-oklch: oklch(0.278 0.01 85);
+  --tos-warm-gray: #6b6560;
+  --tos-warm-gray-oklch: oklch(0.498 0.01 70);
+  --tos-muted-gray: #8a837c;
+  --tos-muted-gray-oklch: oklch(0.598 0.01 70);
+
+  /* ─── Semantic: Surfaces ─── */
+  --tos-bg: var(--tos-rice-white);
+  --tos-bg-subtle: var(--tos-warm-ivory);
+  --tos-bg-muted: var(--tos-soft-pearl);
+  --tos-surface: var(--tos-mist-white);
+  --tos-surface-raised: var(--tos-warm-ivory);
+  --tos-surface-sunken: var(--tos-natural-linen);
+  --tos-surface-overlay: color-mix(in oklab, var(--tos-ink-black) 28%, transparent);
+
+  /* ─── Semantic: Border ─── */
+  --tos-border-subtle: var(--tos-light-sand);
+  --tos-border: var(--tos-warm-stone);
+  --tos-border-strong: var(--tos-ash-gray);
+  --tos-border-focus: var(--tos-deep-forest);
+  --tos-border-accent: var(--tos-champagne-gold);
+
+  /* ─── Semantic: Text ─── */
+  --tos-text: var(--tos-charcoal);
+  --tos-text-strong: var(--tos-ink-black);
+  --tos-text-muted: var(--tos-warm-gray);
+  --tos-text-faint: var(--tos-muted-gray);
+  --tos-text-on-accent: var(--tos-rice-white);
+  --tos-text-inverse: var(--tos-rice-white);
+
+  /* ─── Semantic: Accent / Action ─── */
+  --tos-accent: var(--tos-deep-forest);
+  --tos-accent-hover: var(--tos-moss);
+  --tos-accent-muted: var(--tos-matcha);
+  --tos-accent-soft: var(--tos-bamboo);
+  --tos-premium: var(--tos-brushed-brass);
+  --tos-premium-soft: var(--tos-champagne-gold);
+
+  /* ─── Semantic: Status (palette-bound; never neon) ─── */
+  --tos-success: var(--tos-moss);
+  --tos-success-bg: color-mix(in oklab, var(--tos-bamboo) 22%, var(--tos-rice-white));
+  --tos-success-border: var(--tos-sage);
+  --tos-warn: var(--tos-warm-bronze);
+  --tos-warn-bg: color-mix(in oklab, var(--tos-champagne-gold) 28%, var(--tos-rice-white));
+  --tos-warn-border: var(--tos-brushed-brass);
+  --tos-danger: #8f4e3c;
+  --tos-danger-oklch: oklch(0.48 0.08 35);
+  --tos-danger-bg: color-mix(in oklab, var(--tos-soft-clay) 35%, var(--tos-rice-white));
+  --tos-danger-border: var(--tos-soft-clay);
+  --tos-info: var(--tos-charcoal);
+  --tos-info-bg: var(--tos-soft-pearl);
+  --tos-info-border: var(--tos-warm-stone);
+
+  /* ─── Typography ─── */
+  --tos-font-sans: "Geist", "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --tos-font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --tos-font-display: var(--tos-font-sans);
+
+  --tos-text-display: 2.5rem; /* 40px */
+  --tos-text-title: 1.75rem; /* 28px */
+  --tos-text-heading: 1.25rem; /* 20px */
+  --tos-text-body: 1rem; /* 16px */
+  --tos-text-body-sm: 0.875rem; /* 14px */
+  --tos-text-caption: 0.75rem; /* 12px */
+  --tos-text-mono: 0.875rem;
+
+  --tos-leading-display: 1.2;
+  --tos-leading-title: 1.25;
+  --tos-leading-heading: 1.35;
+  --tos-leading-body: 1.6;
+  --tos-leading-caption: 1.45;
+
+  --tos-tracking-display: -0.02em;
+  --tos-tracking-title: -0.015em;
+  --tos-tracking-body: 0;
+  --tos-tracking-caption: 0.02em;
+  --tos-tracking-mono: 0.01em;
+
+  --tos-weight-regular: 400;
+  --tos-weight-medium: 500;
+  --tos-weight-semibold: 600;
+
+  /* ─── Spacing (8px system) ─── */
+  --tos-space-0: 0;
+  --tos-space-1: 0.25rem; /* 4 */
+  --tos-space-2: 0.5rem; /* 8 */
+  --tos-space-3: 0.75rem; /* 12 */
+  --tos-space-4: 1rem; /* 16 */
+  --tos-space-5: 1.5rem; /* 24 */
+  --tos-space-6: 2rem; /* 32 */
+  --tos-space-7: 2.5rem; /* 40 */
+  --tos-space-8: 3rem; /* 48 */
+  --tos-space-9: 4rem; /* 64 */
+  --tos-space-10: 5rem; /* 80 */
+  --tos-space-11: 6rem; /* 96 */
+
+  /* ─── Layout ─── */
+  --tos-radius-sm: 2px;
+  --tos-radius-md: 4px;
+  --tos-radius-lg: 8px;
+  --tos-radius-none: 0;
+  --tos-max-content: 72rem; /* 1152 */
+  --tos-max-readable: 40rem; /* 640 */
+  --tos-max-narrow: 28rem; /* 448 — pay / confirm */
+  --tos-gutter-guest: var(--tos-space-8);
+  --tos-gutter-ops: var(--tos-space-5);
+  --tos-page-pad-guest: var(--tos-space-9);
+  --tos-page-pad-ops: var(--tos-space-6);
+
+  /* ─── Elevation = tonal shift (no drop shadows by default) ─── */
+  --tos-elev-0: var(--tos-bg);
+  --tos-elev-1: var(--tos-surface);
+  --tos-elev-2: var(--tos-surface-raised);
+  --tos-elev-3: var(--tos-natural-linen);
+  --tos-shadow-none: none;
+  /* Rare focus ring only — soft, not SaaS glow */
+  --tos-focus-ring: 0 0 0 2px var(--tos-bg), 0 0 0 4px var(--tos-deep-forest);
+
+  /* ─── Motion ─── */
+  --tos-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --tos-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --tos-ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --tos-duration-instant: 100ms;
+  --tos-duration-fast: 180ms;
+  --tos-duration-normal: 280ms;
+  --tos-duration-slow: 420ms;
+  --tos-duration-page: 520ms;
+
+  /* ─── Materials (CSS mapping hints) ─── */
+  --tos-texture-washi: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  --tos-border-ceramic: 1px solid var(--tos-border);
+  --tos-border-linen: 1px solid var(--tos-border-subtle);
+  --tos-hairline-gold: 1px solid color-mix(in oklab, var(--tos-champagne-gold) 55%, var(--tos-warm-stone));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --tos-duration-instant: 0ms;
+    --tos-duration-fast: 0ms;
+    --tos-duration-normal: 0ms;
+    --tos-duration-slow: 0ms;
+    --tos-duration-page: 0ms;
+  }
+}

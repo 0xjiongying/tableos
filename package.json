@@ -1,0 +1,30 @@
+{
+  "name": "tableos",
+  "private": true,
+  "version": "0.1.0",
+  "description": "TableOS — AI-native restaurant OS with settlement-grade payments (premium dining beachhead)",
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "dev": "pnpm --filter @tableos/web dev",
+    "build": "pnpm --filter @tableos/web build",
+    "start": "pnpm --filter @tableos/web start",
+    "lint": "pnpm --filter @tableos/web lint",
+    "typecheck": "pnpm --filter @tableos/web typecheck",
+    "test": "pnpm --filter @tableos/web test",
+    "test:e2e": "pnpm --filter @tableos/web test:e2e",
+    "db:generate": "pnpm --filter @tableos/web db:generate",
+    "db:push": "pnpm --filter @tableos/web db:push",
+    "db:migrate": "pnpm --filter @tableos/web db:migrate",
+    "db:seed": "pnpm --filter @tableos/web db:seed",
+    "db:studio": "pnpm --filter @tableos/web db:studio",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

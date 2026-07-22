@@ -1,0 +1,492 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ─────────────────────────────────────────────
+
+enum StaffRole {
+  OWNER
+  GM
+  HOST
+  SERVER
+  KITCHEN
+  DOOR
+  FINANCE
+  VIEWER
+}
+
+enum ReservationStatus {
+  DRAFT
+  HELD
+  CONFIRMED
+  CHECKED_IN
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  ESCROWED
+  RELEASED
+  REFUNDED
+  FAILED
+}
+
+enum OrderStatus {
+  DRAFT
+  SUBMITTED
+  IN_KITCHEN
+  READY
+  SERVED
+  CANCELLED
+}
+
+enum KitchenTicketStatus {
+  QUEUED
+  FIRING
+  READY
+  BUMPED
+  CANCELLED
+}
+
+enum ActivityVerb {
+  CREATED
+  UPDATED
+  BOOKED
+  PAID
+  ESCROWED
+  CHECKED_IN
+  RELEASED
+  REFUNDED
+  CANCELLED
+  AI_QUERY
+  LOGIN
+  SETTINGS
+}
+
+enum FeatureFlagKey {
+  AI_ASSISTANT
+  KITCHEN_BOARD
+  LOYALTY
+  ARC_PAYMENTS
+  ANALYTICS_AI
+  COMMAND_PALETTE
+}
+
+// ─── Core org ──────────────────────────────────────────
+
+model Restaurant {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  tagline     String?
+  description String?
+  timezone    String   @default("Asia/Tokyo")
+  currency    String   @default("USD")
+  locale      String   @default("en-US")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  branches     Branch[]
+  staff        StaffMember[]
+  guests       Guest[]
+  menuCategories MenuCategory[]
+  menuItems    MenuItem[]
+  settings     RestaurantSetting[]
+  featureFlags FeatureFlag[]
+  activities   Activity[]
+  auditLogs    AuditLog[]
+  aiConversations AiConversation[]
+  payments     Payment[]
+  reservations Reservation[]
+  diningEvents DiningEvent[]
+}
+
+model Branch {
+  id           String   @id @default(cuid())
+  restaurantId String
+  name         String
+  addressLine1 String?
+  city         String?
+  country      String?  @default("JP")
+  phone        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  restaurant   Restaurant    @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  tables       DiningTable[]
+  staff        StaffMember[]
+  reservations Reservation[]
+  diningEvents DiningEvent[]
+  orders       Order[]
+
+  @@index([restaurantId])
+}
+
+model RestaurantSetting {
+  id           String   @id @default(cuid())
+  restaurantId String
+  key          String
+  value        Json
+  updatedAt    DateTime @updatedAt
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
+  @@unique([restaurantId, key])
+}
+
+model FeatureFlag {
+  id           String         @id @default(cuid())
+  restaurantId String
+  key          FeatureFlagKey
+  enabled      Boolean        @default(false)
+  meta         Json?
+  updatedAt    DateTime       @updatedAt
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
+  @@unique([restaurantId, key])
+}
+
+// ─── People ────────────────────────────────────────────
+
+model StaffMember {
+  id           String    @id @default(cuid())
+  restaurantId String
+  branchId     String?
+  email        String
+  name         String
+  role         StaffRole @default(HOST)
+  authUserId   String?   @unique
+  active       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  branch     Branch?    @relation(fields: [branchId], references: [id])
+
+  @@unique([restaurantId, email])
+  @@index([restaurantId, role])
+}
+
+model Guest {
+  id           String   @id @default(cuid())
+  restaurantId String
+  email        String?
+  phone        String?
+  name         String
+  notes        String?
+  loyaltyPoints Int     @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  restaurant   Restaurant    @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  reservations Reservation[]
+  payments     Payment[]
+  profiles     GuestProfile?
+
+  @@index([restaurantId, email])
+}
+
+model GuestProfile {
+  id               String   @id @default(cuid())
+  guestId          String   @unique
+  dietaryNotes     String?
+  seatingPrefs     String?
+  celebrationNotes String?
+  vip              Boolean  @default(false)
+  updatedAt        DateTime @updatedAt
+
+  guest Guest @relation(fields: [guestId], references: [id], onDelete: Cascade)
+}
+
+// ─── Floor & inventory ─────────────────────────────────
+
+model DiningTable {
+  id        String   @id @default(cuid())
+  branchId  String
+  label     String
+  capacity  Int
+  zone      String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  branch       Branch        @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  reservations Reservation[]
+
+  @@unique([branchId, label])
+}
+
+/// Premium tasting / event inventory (hackathon core)
+model DiningEvent {
+  id              String   @id @default(cuid())
+  restaurantId    String
+  branchId        String
+  slug            String
+  title           String
+  subtitle        String?
+  description     String?
+  startsAt        DateTime
+  endsAt          DateTime
+  capacity        Int
+  seatsHeld       Int      @default(0)
+  seatsBooked     Int      @default(0)
+  priceCents      Int
+  currency        String   @default("USD")
+  depositRequired Boolean  @default(true)
+  published       Boolean  @default(true)
+  cancelPolicy    String   @default("full_refund_48h")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  restaurant   Restaurant    @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  branch       Branch        @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  reservations Reservation[]
+  splitRules   RevenueSplitRule[]
+
+  @@unique([restaurantId, slug])
+  @@index([restaurantId, startsAt])
+}
+
+model RevenueSplitRule {
+  id            String @id @default(cuid())
+  diningEventId String
+  label         String
+  /// Basis points of net (10000 = 100%)
+  bps           Int
+  payeeRef      String
+  sortOrder     Int    @default(0)
+
+  diningEvent DiningEvent @relation(fields: [diningEventId], references: [id], onDelete: Cascade)
+
+  @@index([diningEventId])
+}
+
+model Reservation {
+  id            String            @id @default(cuid())
+  restaurantId  String
+  branchId      String
+  diningEventId String?
+  guestId       String
+  tableId       String?
+  partySize     Int
+  status        ReservationStatus @default(HELD)
+  scheduledAt   DateTime
+  notes         String?
+  confirmationCode String         @unique
+  checkedInAt   DateTime?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  restaurant  Restaurant   @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  branch      Branch       @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  diningEvent DiningEvent? @relation(fields: [diningEventId], references: [id])
+  guest       Guest        @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  table       DiningTable? @relation(fields: [tableId], references: [id])
+  payments    Payment[]
+  orders      Order[]
+
+  @@index([restaurantId, scheduledAt])
+  @@index([diningEventId])
+  @@index([status])
+}
+
+// ─── Menu / kitchen (schema-ready; thin UI) ────────────
+
+model MenuCategory {
+  id           String   @id @default(cuid())
+  restaurantId String
+  name         String
+  sortOrder    Int      @default(0)
+  active       Boolean  @default(true)
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  items      MenuItem[]
+
+  @@index([restaurantId])
+}
+
+model MenuItem {
+  id           String   @id @default(cuid())
+  restaurantId String
+  categoryId   String
+  name         String
+  description  String?
+  priceCents   Int
+  courseTag    String?
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  restaurant Restaurant   @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  category   MenuCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  orderItems OrderItem[]
+
+  @@index([restaurantId, active])
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  branchId      String
+  reservationId String?
+  status        OrderStatus @default(DRAFT)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  branch      Branch       @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  reservation Reservation? @relation(fields: [reservationId], references: [id])
+  items       OrderItem[]
+  tickets     KitchenTicket[]
+
+  @@index([branchId, status])
+}
+
+model OrderItem {
+  id         String @id @default(cuid())
+  orderId    String
+  menuItemId String
+  quantity   Int    @default(1)
+  notes      String?
+  unitCents  Int
+
+  order    Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  menuItem MenuItem @relation(fields: [menuItemId], references: [id])
+}
+
+model KitchenTicket {
+  id        String              @id @default(cuid())
+  orderId   String
+  status    KitchenTicketStatus @default(QUEUED)
+  station   String?
+  firedAt   DateTime?
+  readyAt   DateTime?
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+}
+
+// ─── Payments / settlement ─────────────────────────────
+
+model Payment {
+  id               String        @id @default(cuid())
+  restaurantId     String
+  reservationId    String?
+  guestId          String?
+  amountCents      Int
+  currency         String        @default("USD")
+  status           PaymentStatus @default(PENDING)
+  adapter          String        @default("mock")
+  externalId       String?
+  escrowRef        String?
+  releaseTxRef     String?
+  platformFeeCents Int           @default(0)
+  meta             Json?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  restaurant  Restaurant   @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  reservation Reservation? @relation(fields: [reservationId], references: [id])
+  guest       Guest?       @relation(fields: [guestId], references: [id])
+  chainEvents BlockchainEvent[]
+
+  @@index([restaurantId, status])
+  @@index([externalId])
+}
+
+/// Future Arc / agent settlement event log (stub table)
+model BlockchainEvent {
+  id          String   @id @default(cuid())
+  paymentId   String?
+  chainId     String?
+  txHash      String?
+  eventType   String
+  payload     Json?
+  confirmed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  payment Payment? @relation(fields: [paymentId], references: [id])
+
+  @@index([txHash])
+  @@index([eventType])
+}
+
+model AgentEvent {
+  id        String   @id @default(cuid())
+  agentId   String
+  kind      String
+  payload   Json?
+  createdAt DateTime @default(now())
+
+  @@index([agentId, createdAt])
+}
+
+// ─── AI / audit / activity ─────────────────────────────
+
+model AiConversation {
+  id           String   @id @default(cuid())
+  restaurantId String
+  staffEmail   String?
+  title        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  restaurant Restaurant  @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  messages   AiMessage[]
+}
+
+model AiMessage {
+  id             String   @id @default(cuid())
+  conversationId String
+  role           String
+  content        String
+  model          String?
+  createdAt      DateTime @default(now())
+
+  conversation AiConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}
+
+model Activity {
+  id           String       @id @default(cuid())
+  restaurantId String
+  verb         ActivityVerb
+  actorLabel   String
+  subjectType  String
+  subjectId    String?
+  summary      String
+  meta         Json?
+  createdAt    DateTime     @default(now())
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
+  @@index([restaurantId, createdAt])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  restaurantId String
+  actorId      String?
+  action       String
+  resource     String
+  resourceId   String?
+  before       Json?
+  after        Json?
+  ip           String?
+  createdAt    DateTime @default(now())
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
+  @@index([restaurantId, createdAt])
+}

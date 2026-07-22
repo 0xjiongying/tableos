@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: tableos
+          POSTGRES_PASSWORD: tableos
+          POSTGRES_DB: tableos
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U tableos -d tableos"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://tableos:tableos@localhost:5432/tableos?schema=public
+      # CI service maps container 5432 → localhost:5432 (not host 5433)
+      DEMO_AUTH_ENABLED: "true"
+      PAYMENTS_ADAPTER: mock
+      NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
+      AI_ENABLED: "false"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile=false
+
+      - name: Generate Prisma client
+        run: pnpm db:generate
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Push schema + seed
+        run: |
+          pnpm db:push
+          pnpm db:seed
+
+      - name: Install Playwright browser
+        run: pnpm --filter @tableos/web exec playwright install chromium --with-deps
+
+      - name: E2E smoke
+        run: pnpm test:e2e

@@ -1,0 +1,87 @@
+/* Canonical design docs: docs/design/tokens.css — keep in sync */
+@import "../styles/tokens.css";
+@import "tailwindcss";
+
+@theme inline {
+  --color-tos-bg: var(--tos-bg);
+  --color-tos-bg-subtle: var(--tos-bg-subtle);
+  --color-tos-bg-muted: var(--tos-bg-muted);
+  --color-tos-surface: var(--tos-surface);
+  --color-tos-surface-raised: var(--tos-surface-raised);
+  --color-tos-surface-sunken: var(--tos-surface-sunken);
+  --color-tos-border: var(--tos-border);
+  --color-tos-border-subtle: var(--tos-border-subtle);
+  --color-tos-border-strong: var(--tos-border-strong);
+  --color-tos-border-focus: var(--tos-border-focus);
+  --color-tos-text: var(--tos-text);
+  --color-tos-text-strong: var(--tos-text-strong);
+  --color-tos-text-muted: var(--tos-text-muted);
+  --color-tos-text-faint: var(--tos-text-faint);
+  --color-tos-text-on-accent: var(--tos-text-on-accent);
+  --color-tos-accent: var(--tos-accent);
+  --color-tos-accent-hover: var(--tos-accent-hover);
+  --color-tos-premium: var(--tos-premium);
+  --color-tos-premium-soft: var(--tos-premium-soft);
+  --color-tos-success: var(--tos-success);
+  --color-tos-success-bg: var(--tos-success-bg);
+  --color-tos-warn: var(--tos-warn);
+  --color-tos-warn-bg: var(--tos-warn-bg);
+  --color-tos-danger: var(--tos-danger);
+  --color-tos-danger-bg: var(--tos-danger-bg);
+  --font-sans: var(--tos-font-sans);
+  --font-mono: var(--tos-font-mono);
+  --radius-sm: var(--tos-radius-sm);
+  --radius-md: var(--tos-radius-md);
+  --radius-lg: var(--tos-radius-lg);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Quiet dark — charcoal washi, not crypto neon */
+html.dark {
+  --tos-bg: #1c1b19;
+  --tos-bg-subtle: #22211e;
+  --tos-bg-muted: #2a2824;
+  --tos-surface: #24221f;
+  --tos-surface-raised: #2c2a26;
+  --tos-surface-sunken: #181715;
+  --tos-border-subtle: #3a3732;
+  --tos-border: #4a4540;
+  --tos-border-strong: #6b6560;
+  --tos-text: #ebe6de;
+  --tos-text-strong: #f7f3eb;
+  --tos-text-muted: #a39e96;
+  --tos-text-faint: #8a837c;
+  --tos-accent: #8b9a7d;
+  --tos-accent-hover: #a8b89a;
+  --tos-text-on-accent: #1a1917;
+  --tos-success-bg: color-mix(in oklab, var(--tos-bamboo) 18%, #1c1b19);
+  --tos-warn-bg: color-mix(in oklab, var(--tos-champagne-gold) 18%, #1c1b19);
+  --tos-danger-bg: color-mix(in oklab, var(--tos-soft-clay) 22%, #1c1b19);
+  --tos-focus-ring: 0 0 0 2px var(--tos-bg), 0 0 0 4px var(--tos-accent);
+}
+
+body {
+  background-color: var(--tos-bg);
+  background-image: var(--tos-texture-washi);
+  color: var(--tos-text);
+  font-family: var(--tos-font-sans);
+  font-size: var(--tos-text-body);
+  line-height: var(--tos-leading-body);
+  min-height: 100vh;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--tos-focus-ring);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--tos-bamboo) 35%, transparent);
+}

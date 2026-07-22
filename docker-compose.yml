@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tableos-postgres
+    restart: unless-stopped
+    ports:
+      # Host 5433 avoids clashes with other local Postgres containers on 5432
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: tableos
+      POSTGRES_PASSWORD: tableos
+      POSTGRES_DB: tableos
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tableos -d tableos"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Optional Redis for future job queues / rate limits
+  redis:
+    image: redis:7-alpine
+    container_name: tableos-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    profiles: ["full"]
