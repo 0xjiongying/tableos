@@ -4,8 +4,8 @@
 
 | Component | Recommendation |
 |---|---|
-| Web | Vercel (`apps/web`) |
-| DB | Supabase or Neon Postgres |
+| Web | Render (`tableos-web.onrender.com`) via `render.yaml`; Vercel optional |
+| DB | Render Postgres (Blueprint) or Supabase / Neon |
 | Auth | Replace demo cookies with Supabase Auth before public prod |
 | Payments | `mock` for staging demos; `arc` only after contracts + legal path |
 | Objects | Cloudflare R2 / S3 (not wired in v1) |

@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Programmable financial OS for the hospitality industry.",
   description:
     "TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc — accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
-  url: "https://tableos-delta.vercel.app",
+  url: "https://tableos-web.onrender.com",
   github: "https://github.com/0xjiongying/tableos",
   demoBook: "/book/kintsugi",
   demoStaff: "/staff/login",
