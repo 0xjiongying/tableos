@@ -1,6 +1,8 @@
-# FlowArc on Render — Next.js web + existing Postgres
+# FlowArc on Render — Next.js web + Postgres (Blueprint)
 # Source of truth: https://github.com/0xjiongying/tableos
-# Public deploy mirror (Render GitHub access): https://github.com/0xjiongying/tableos-render
+# Public URL: https://tableos-web.onrender.com
+#
+# After merging to master: Dashboard → Blueprint → Manual Sync, or wait for auto-deploy.
 
 databases:
   - name: tableos-demo-db
@@ -16,7 +18,11 @@ services:
     region: oregon
     branch: master
     autoDeployTrigger: commit
+    # Install all workspace deps (incl. Prisma CLI), then production-build the Next app.
     buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @flowarc/web build
+    # Apply schema + demo seed before each release so staff/guest flows have data.
+    preDeployCommand: pnpm --filter @flowarc/web exec prisma db push && pnpm --filter @flowarc/web db:seed
+    # Bind to Render's PORT on all interfaces (required).
     startCommand: pnpm --filter @flowarc/web exec next start --hostname 0.0.0.0 --port $PORT
     healthCheckPath: /
     envVars:
@@ -34,6 +40,8 @@ services:
         value: tableos-demo
       - key: PAYMENTS_ADAPTER
         value: mock
+      - key: AI_ENABLED
+        value: "false"
       - key: SESSION_SECRET
         generateValue: true
       - key: NEXT_PUBLIC_APP_URL
