@@ -22,7 +22,8 @@ Blueprint: [`render.yaml`](../../render.yaml) at repo root.
 | Branch | `master` (auto-deploy on commit) |
 | Build | `npm install && npm run build` |
 | Pre-deploy | `npm run db:push -w @flowarc/web && npm run db:seed -w @flowarc/web` |
-| Start | `npm run start -w @flowarc/web -- --hostname 0.0.0.0 --port $PORT` |
+| Start | `npm run start -w @flowarc/web` (binds `0.0.0.0`, uses `PORT`) |
+| Health | `/api/health` (no DB) |
 
 ### First-time / repair checklist
 
@@ -39,7 +40,7 @@ Blueprint: [`render.yaml`](../../render.yaml) at repo root.
    - `PAYMENTS_ADAPTER=mock`
    - `SESSION_SECRET` (generated)
    - `AI_ENABLED=false` (unless you set `OPENAI_API_KEY`)
-7. Watch **Logs** until health check on `/` passes.
+7. Watch **Logs** until health check on `/api/health` passes, then confirm `/` returns HTML.
 8. Smoke test:
    - https://tableos-web.onrender.com/
    - Staff: `host@kintsugi.tokyo` / `tableos-demo`

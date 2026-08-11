@@ -19,9 +19,11 @@ services:
     branch: master
     autoDeployTrigger: commit
     buildCommand: npm install && npm run build
-    preDeployCommand: npm run db:push -w @flowarc/web && npm run db:seed -w @flowarc/web
-    startCommand: npm run start -w @flowarc/web -- --hostname 0.0.0.0 --port $PORT
-    healthCheckPath: /
+    # Fail-fast schema/seed — must not hang the deploy on DB connect
+    preDeployCommand: node scripts/render-predeploy.mjs
+    # Bind 0.0.0.0; Next reads Render's PORT env automatically
+    startCommand: npm run start -w @flowarc/web
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
         value: "20"
