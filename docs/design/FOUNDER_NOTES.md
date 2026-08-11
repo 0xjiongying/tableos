@@ -1,8 +1,8 @@
-# TableOS Design — Founder Notes
+# FlowArc Design — Founder Notes
 
 **Date:** 2026-07-22  
 **Audience:** Founders / IC / design partners  
-**Companion:** [`TABLEOS_DESIGN_SYSTEM.md`](./TABLEOS_DESIGN_SYSTEM.md) · [`tokens.css`](./tokens.css)
+**Companion:** [`FLOWARC_DESIGN_SYSTEM.md`](./FLOWARC_DESIGN_SYSTEM.md) · [`tokens.css`](./tokens.css)
 
 ---
 
@@ -51,7 +51,7 @@ We specify kitchen, wine, waitlist, etc. so the brand doesn’t fracture later �
 | Dark mode luxury default | Common “premium AI” trap; reduces guest trust on payment; fails bright readability goal |
 | Purple / indigo fintech | Crypto/SaaS cliché; fails Stripe test |
 | Cream + terracotta + serif “editorial AI” | Overused generative-design cluster; not Japanese hospitality |
-| Consumer food-ordering patterns | Wrong category; TableOS is not delivery |
+| Consumer food-ordering patterns | Wrong category; FlowArc is not delivery |
 | Glassmorphism + heavy shadows | Visual noise; fights matte craft |
 | Neon status colors | Breaks palette; a11y and brand |
 | Private-banking navy-only | IC one-liner refined: banking *calm* yes; navy corporate no — botanical hospitality fits beachhead better while remaining extensible |

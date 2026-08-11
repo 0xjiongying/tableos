@@ -1,8 +1,8 @@
 export const SITE = {
-  name: "TableOS",
-  tagline: "Programmable financial OS for the hospitality industry.",
+  name: "FlowArc",
+  tagline: "Programmable financial infrastructure for organizations.",
   description:
-    "TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc — accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money.",
+    "Programmable USDC payments, escrow, settlement, revenue distribution, and treasury infrastructure.",
   url: "https://tableos-web.onrender.com",
   github: "https://github.com/0xjiongying/tableos",
   demoBook: "/book/kintsugi",
@@ -35,9 +35,9 @@ export const ARC = {
   partnersNote:
     "Circle-backed; design partners referenced in the Arc ecosystem include Goldman Sachs, Visa, and Mastercard (also BlackRock and AWS).",
   tokenNote:
-    "No Arc mainnet token is live; a token is under exploration. TableOS does not depend on an Arc token.",
+    "No Arc mainnet token is live; a token is under exploration. FlowArc does not depend on an Arc token.",
   honesty:
-    "TableOS’s live demo uses a mock payments adapter. Arc adapters are scaffolded for testnet — we never fake on-chain success.",
+    "FlowArc’s live demo uses a mock payments adapter. Arc adapters are scaffolded for testnet — we never fake on-chain success.",
 } as const;
 
 export const NAV_LINKS = [
@@ -89,7 +89,7 @@ export const FEATURES = [
     problem:
       "After a sold-out tasting, house, partners, and venues reconcile splits by hand — errors and delays follow.",
     solution:
-      "On verified attendance, TableOS settles the evening and distributes revenue according to predefined rules.",
+      "On verified attendance, FlowArc settles the evening and distributes revenue according to predefined rules.",
     impact:
       "Partners get paid with the event, not weeks later. Finance closes the night with an auditable trail.",
     arc: "Programmable USDC on an EVM L1 purpose-built for payments lets split logic execute with the settlement — Stripe/card rails cannot collapse multi-party payout into one atomic condition.",
@@ -114,7 +114,7 @@ export const FEATURES = [
       "An AI-powered assistant summarizes treasury posture and helps staff find reservations in natural language over demo or live data.",
     impact:
       "Managers brief before service in seconds — without opening five tools.",
-    arc: "Arc targets real-world finance and the agentic economy; TableOS keeps AI on structured settlement events, not speculative chain theatre.",
+    arc: "Arc targets real-world finance and the agentic economy; FlowArc keeps AI on structured settlement events, not speculative chain theatre.",
   },
 ] as const;
 
@@ -152,7 +152,7 @@ export const WHY_ARC = [
   },
   {
     title: "USDC-native real-world finance",
-    body: "Arc is Circle’s L1 built for stablecoins, payments, tokenized assets, and capital-markets workflows — not consumer speculation. TableOS settles obligations in USDC.",
+    body: "Arc is Circle’s L1 built for stablecoins, payments, tokenized assets, and capital-markets workflows — not consumer speculation. FlowArc settles obligations in USDC.",
   },
   {
     title: "Opt-in privacy for compliance",
@@ -204,12 +204,12 @@ export const ENTERPRISE = [
 
 export const FAQ = [
   {
-    q: "What is TableOS?",
-    a: "TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc, it turns every payment into an automated financial workflow — from reservation and settlement to revenue sharing and treasury updates — instead of treating payments as isolated transactions.",
+    q: "What is FlowArc?",
+    a: "FlowArc is programmable financial infrastructure for organizations — programmable USDC payments, escrow, settlement, revenue distribution, and treasury infrastructure. Built on Arc, it turns every payment into an automated financial workflow instead of treating payments as isolated transactions.",
   },
   {
-    q: "Is TableOS a restaurant website builder?",
-    a: "No. TableOS is financial infrastructure for the hospitality industry: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
+    q: "Is FlowArc a restaurant website builder?",
+    a: "No. FlowArc is financial infrastructure: USDC payments, smart contract escrow, automatic revenue distribution, and treasury operations — with a calm product surface guests and staff already understand.",
   },
   {
     q: "Why programmable money?",
@@ -220,8 +220,8 @@ export const FAQ = [
     a: "Arc is Circle’s stablecoin-native EVM L1 with USDC gas, ~780ms deterministic finality (Malachite BFT), and opt-in privacy — purpose-built for real-world finance. Card rails and general L1s cannot replace escrow → attendance → split → treasury as one settlement path.",
   },
   {
-    q: "Is there an Arc token TableOS needs?",
-    a: "No. There is no Arc mainnet token live (a token is under exploration). TableOS settles in USDC and does not depend on an Arc token.",
+    q: "Is there an Arc token FlowArc needs?",
+    a: "No. There is no Arc mainnet token live (a token is under exploration). FlowArc settles in USDC and does not depend on an Arc token.",
   },
   {
     q: "Do you require a crypto wallet for the live demo?",

@@ -1,8 +1,8 @@
-# TableOS
+# FlowArc
 
-**Programmable financial OS for the hospitality industry — built on Arc.**
+**Programmable financial infrastructure for organizations — built on Arc.**
 
-TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money. Every payment becomes an automated financial workflow — reservation → escrow → settlement → revenue share → treasury — not an isolated transaction.
+FlowArc is programmable financial infrastructure for organizations. Programmable USDC payments, escrow, settlement, revenue distribution, and treasury infrastructure. Every payment becomes an automated financial workflow — reservation → escrow → settlement → revenue share → treasury — not an isolated transaction.
 
 **Core MVP:** premium dining event reservations · USDC payments on Arc · smart contract escrow · automatic revenue distribution · real-time treasury dashboard · AI-powered treasury assistant.
 

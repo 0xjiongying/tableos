@@ -25,7 +25,7 @@ export function ArchitectureSection() {
     <Section
       id="architecture"
       eyebrow="Architecture"
-      title="How TableOS fits together"
+      title="How FlowArc fits together"
       lead="A clear boundary between the dining product surface, settlement adapters, and Arc — so demos stay honest and production stays extensible."
     >
       <Reveal>
@@ -37,7 +37,7 @@ export function ArchitectureSection() {
               role="img"
               aria-label="System architecture diagram with selectable nodes"
             >
-              <title>TableOS architecture</title>
+              <title>FlowArc architecture</title>
               {EDGES.map(([from, to]) => {
                 const a = pos(from);
                 const b = pos(to);

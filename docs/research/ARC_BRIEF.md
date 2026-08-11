@@ -1,4 +1,4 @@
-# Arc — Verified Brief for TableOS
+# Arc — Verified Brief for FlowArc
 
 **Status:** Internal reference for marketing + engineering copy  
 **Date:** 2026-07-22  
@@ -32,7 +32,7 @@ Purpose-built for real-world finance:
 | Mainnet | Targeted **2026** (beta soon) |
 | Token | **No mainnet token live**; token under exploration |
 
-**TableOS rule:** Never imply TableOS depends on an Arc token. Never fake on-chain success. Label **demo / mock adapter** vs **Arc testnet** clearly.
+**FlowArc rule:** Never imply FlowArc depends on an Arc token. Never fake on-chain success. Label **demo / mock adapter** vs **Arc testnet** clearly.
 
 ---
 
@@ -85,9 +85,9 @@ Purpose-built for real-world finance:
 
 ---
 
-## TableOS positioning (do not dilute)
+## FlowArc positioning (do not dilute)
 
-TableOS uses Arc for **programmable USDC settlement / escrow / split** under hospitality UX.
+FlowArc uses Arc for **programmable USDC settlement / escrow / split** under hospitality UX.
 
 - Live product demo may use a **mock payments adapter** until Arc RPC + contracts are wired.
 - Arc adapter remains scaffolded with honest `not_configured` / TODO paths.
@@ -97,4 +97,4 @@ TableOS uses Arc for **programmable USDC settlement / escrow / split** under hos
 
 ## Target audience (Arc)
 
-Fintech builders, enterprises / banks / payment companies, and AI / agent developers — aligned with TableOS’s institutional settlement narrative (not consumer crypto speculation).
+Fintech builders, enterprises / banks / payment companies, and AI / agent developers — aligned with FlowArc’s institutional settlement narrative (not consumer crypto speculation).

@@ -1,8 +1,8 @@
-# TableOS Experience Audit
+# FlowArc Experience Audit
 
 **Date:** 2026-07-22  
 **Scope:** Marketing (`/`, `/product`, `/technology`, `/security`, `/about`, `/contact`) + product demo (`/book/*`, `/staff/*`)  
-**Authority:** Experience Masterplan (this engagement) · [`TABLEOS_DESIGN_SYSTEM.md`](./TABLEOS_DESIGN_SYSTEM.md) · [`FOUNDER_NOTES.md`](./FOUNDER_NOTES.md) · tokens
+**Authority:** Experience Masterplan (this engagement) · [`FLOWARC_DESIGN_SYSTEM.md`](./FLOWARC_DESIGN_SYSTEM.md) · [`FOUNDER_NOTES.md`](./FOUNDER_NOTES.md) · tokens
 
 ---
 

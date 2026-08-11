@@ -1,19 +1,19 @@
-# TableOS PRD v2 — Reconciled Product
+# FlowArc PRD v2 — Reconciled Product
 
 **Status:** Engineering + hackathon authority (complements IC Gate)  
 **Date:** 2026-07-22  
-**Supersedes for implementation:** Hospitality-only framing of `TABLEOS_PRD.md`  
+**Supersedes for implementation:** Hospitality-only framing of `FLOWARC_PRD.md`  
 **Does not overturn:** IC Gate company thesis (Condition-Gated Settlement OS)
 
 ---
 
 ## One-sentence value (beachhead)
 
-**TableOS lets premium restaurants, luxury hotels, and tourism businesses sell scarce hospitality evenings with funds held until attendance, then released and split — wrapped in a calm product surface guests and staff already understand.**
+**FlowArc lets premium restaurants, luxury hotels, and tourism businesses sell scarce hospitality evenings with funds held until attendance, then released and split — wrapped in a calm product surface guests and staff already understand.**
 
 ## Company one-sentence (IC)
 
-**TableOS is the settlement layer for high-value obligations escrowed in USDC, released on a verified condition, and split atomically — starting with premium experiential events.**
+**FlowArc is the settlement layer for high-value obligations escrowed in USDC, released on a verified condition, and split atomically — starting with premium experiential events.**
 
 ---
 
@@ -56,5 +56,5 @@ Full POS, loyalty, NFT tickets, live Arc without wiring, multi-restaurant market
 ## Related
 
 - `docs/strategy/SCOPE_RESOLUTION.md`  
-- `docs/strategy/TABLEOS_IC_GATE.md`  
-- `docs/design/TABLEOS_DESIGN_SYSTEM.md`
+- `docs/strategy/FLOWARC_IC_GATE.md`  
+- `docs/design/FLOWARC_DESIGN_SYSTEM.md`

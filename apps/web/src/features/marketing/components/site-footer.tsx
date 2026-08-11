@@ -24,7 +24,7 @@ const columns = [
     title: "Developers",
     links: [
       { href: "/technology", label: "Architecture & Arc" },
-      { href: SITE.github, label: "TableOS GitHub", external: true },
+      { href: SITE.github, label: "FlowArc GitHub", external: true },
       { href: ARC.docs, label: "Arc docs", external: true },
       { href: ARC.github, label: "arc-node", external: true },
     ],
@@ -74,7 +74,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-tos-border-subtle">
         <div className="mx-auto flex max-w-[72rem] flex-col gap-2 px-6 py-6 text-xs text-tos-text-faint md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} TableOS. Programmable financial OS for the hospitality industry.</p>
+          <p>© {new Date().getFullYear()} FlowArc. Programmable financial infrastructure for organizations.</p>
           <p>Built on Arc · Settled in USDC</p>
         </div>
       </div>

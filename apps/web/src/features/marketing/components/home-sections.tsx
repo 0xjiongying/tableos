@@ -19,7 +19,7 @@ export function WhyArcSection() {
       tone="ink"
       eyebrow="Why Arc"
       title="Circle’s stablecoin-native L1 for settlement-grade money"
-      lead={`${ARC.summary} Public testnet launched ${ARC.testnetLaunched}; mainnet targeted ${ARC.mainnetTarget}. TableOS uses Arc for programmable USDC escrow, release, and split — not speculation.`}
+      lead={`${ARC.summary} Public testnet launched ${ARC.testnetLaunched}; mainnet targeted ${ARC.mainnetTarget}. FlowArc uses Arc for programmable USDC escrow, release, and split — not speculation.`}
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {WHY_ARC.map((item, i) => (
@@ -151,7 +151,7 @@ export function FaqSection() {
       tone="subtle"
       eyebrow="FAQ"
       title="Direct answers"
-      lead="What TableOS is — and what it deliberately is not."
+      lead="What FlowArc is — and what it deliberately is not."
     >
       <div className="mx-auto max-w-3xl divide-y divide-tos-border-subtle border-y border-tos-border-subtle">
         {FAQ.map((item) => (

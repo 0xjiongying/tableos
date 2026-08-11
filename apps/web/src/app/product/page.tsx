@@ -8,7 +8,7 @@ import { FEATURES, SERVICE_CHAPTERS, SITE } from "@/features/marketing/content";
 export const metadata: Metadata = {
   title: "Product",
   description:
-    "TableOS product — programmable financial OS for the hospitality industry: USDC on Arc, smart contract escrow, automatic revenue distribution, and real-time treasury.",
+    "FlowArc product — programmable USDC payments, escrow, settlement, revenue distribution, and treasury infrastructure.",
 };
 
 export default function ProductPage() {
@@ -17,7 +17,7 @@ export default function ProductPage() {
       <Section
         eyebrow="Product"
         title="Financial workflows, not isolated payments"
-        lead="TableOS turns every payment into an automated financial workflow — authorization, escrow, settlement, revenue distribution, treasury — for premium restaurants, luxury hotels, tourism businesses, and dining event organizers."
+        lead="FlowArc turns every payment into an automated financial workflow — authorization, escrow, settlement, revenue distribution, treasury."
       >
         <Reveal>
           <div className="flex flex-wrap gap-3">

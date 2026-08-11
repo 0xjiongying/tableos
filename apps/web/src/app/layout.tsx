@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: SITE.description,
   applicationName: SITE.name,
   keywords: [
-    "TableOS",
+    "FlowArc",
     "Arc",
     "Circle",
     "USDC",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "treasury",
     "hospitality finance",
   ],
-  authors: [{ name: "TableOS" }],
+  authors: [{ name: "FlowArc" }],
   openGraph: {
     type: "website",
     locale: "en_US",

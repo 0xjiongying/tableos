@@ -1,14 +1,14 @@
-# TableOS Experience System
+# FlowArc Experience System
 
 **Status:** Authoritative for marketing + product experience (v2.1 — Value Streams)  
 **Supersedes:** Restaurant-OS / hospitality-choreography-first experience narratives  
-**Pairs with:** [`TABLEOS_DESIGN_SYSTEM.md`](./TABLEOS_DESIGN_SYSTEM.md) · `apps/web/src/styles/tokens.css` · `apps/web/src/components/experience/`
+**Pairs with:** [`FLOWARC_DESIGN_SYSTEM.md`](./FLOWARC_DESIGN_SYSTEM.md) · `apps/web/src/styles/tokens.css` · `apps/web/src/components/experience/`
 
 ---
 
 ## Vision
 
-TableOS is **not** a POS, reservation tool, or payment gateway.
+FlowArc is **not** a POS, reservation tool, or payment gateway.
 
 It is a **programmable financial operating system for the hospitality industry**, starting with premium restaurants, luxury hotels, and tourism businesses.
 

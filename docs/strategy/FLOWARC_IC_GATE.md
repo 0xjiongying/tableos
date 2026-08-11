@@ -1,4 +1,4 @@
-# TableOS — Investment Committee Gate (Opportunity Replacement + Economics)
+# FlowArc — Investment Committee Gate (Opportunity Replacement + Economics)
 
 **Status:** BINDING GATE — Step 2 (User Stories) remains **BLOCKED**  
 **Date:** 2026-07-22  
@@ -6,7 +6,7 @@
 **Verdict:** **PIVOT** (hospitality-SaaS framing fails; settlement-infrastructure thesis may proceed only under conditions)  
 **Epistemic labels:** VF = Verified Fact · RA = Reasoned Assumption · SP = Speculation
 
-**Related:** `docs/prd/TABLEOS_PRD.md` · `docs/strategy/METHODOLOGY_IC_GATE.md` · `docs/finance/UNIT_ECONOMICS.md`
+**Related:** `docs/prd/FLOWARC_PRD.md` · `docs/strategy/METHODOLOGY_IC_GATE.md` · `docs/finance/UNIT_ECONOMICS.md`
 
 ---
 
@@ -14,22 +14,22 @@
 
 | Question | Answer |
 |---|---|
-| Is hospitality-only TableOS the highest-value Arc company? | **No** |
+| Is hospitality-only FlowArc the highest-value Arc company? | **No** |
 | Should we implement the current PRD as written? | **No** |
 | What wins the replacement test? | **Condition-Gated Commercial Settlement OS** (multi-party escrow + atomic split + deterministic USDC settle on Arc) |
 | Role of premium dining? | **Beachhead wedge / demo vertical only** — not the company |
 | Step 2 unlocked? | **No** — blocked until pivot PRD + distribution evidence + legal custody path |
 
-**One-line verdict:** **PIVOT** — kill “restaurant financial SaaS”; rebuild TableOS as Arc-native **condition-gated settlement infrastructure**, with premium multi-party dining events as the first wedge only if distribution proofs clear within 90 days.
+**One-line verdict:** **PIVOT** — kill “restaurant financial SaaS”; rebuild FlowArc as Arc-native **condition-gated settlement infrastructure**, with premium multi-party dining events as the first wedge only if distribution proofs clear within 90 days.
 
 **Surviving one-sentence VP:**  
-TableOS is the settlement layer for high-value commercial obligations that must be escrowed in USDC, released on a verified condition, and split atomically to multiple parties — starting with premium experiential events where attendance is the condition.
+FlowArc is the settlement layer for high-value commercial obligations that must be escrowed in USDC, released on a verified condition, and split atomically to multiple parties — starting with premium experiential events where attendance is the condition.
 
 ---
 
 ## A. Opportunity Replacement Test
 
-### A1. Five highest-value Arc opportunities (+ incumbent TableOS hospitality)
+### A1. Five highest-value Arc opportunities (+ incumbent FlowArc hospitality)
 
 Scoring 1–10 each: Market importance · Arc-native advantage · Unit economics · Distribution · Category creation · 10-year infrastructure importance. Max = 60.
 
@@ -40,13 +40,13 @@ Scoring 1–10 each: Market importance · Arc-native advantage · Unit economics
 | 3 | **Corporate Multi-Entity Treasury OS** (USDC + FX + CCTP ops) | 9 | 9 | 8 | 6 | 7 | 9 | **48** | **$0.3B–$2B** |
 | 4 | **AI Agent Commerce Settlement Rail** | 7 | 10 | 5 | 4 | 10 | 9 | **45** | **$0.2B–$10B** (binary; SP) |
 | 5 | **Cross-Border B2B Payables Network** | 9 | 8 | 7 | 5 | 6 | 8 | **43** | **$0.2B–$1.5B** |
-| X | **TableOS hospitality-only** (current PRD) | 5 | 8 | 6 | 4 | 4 | 4 | **31** | **$30M–$150M** |
+| X | **FlowArc hospitality-only** (current PRD) | 5 | 8 | 6 | 4 | 4 | 4 | **31** | **$30M–$150M** |
 
-### A2. Why each alternative beats or loses to hospitality-only TableOS
+### A2. Why each alternative beats or loses to hospitality-only FlowArc
 
-| Candidate | Why strong | Why not choose as primary (or why replace TableOS) |
+| Candidate | Why strong | Why not choose as primary (or why replace FlowArc) |
 |---|---|---|
-| **#1 Settlement OS** | Largest durable Arc-fit; Stripe cannot do true programmable condition+atomic split+dollar gas cleanly; network effects via settlement graph | **WINNER** — TableOS must become this, or die |
+| **#1 Settlement OS** | Largest durable Arc-fit; Stripe cannot do true programmable condition+atomic split+dollar gas cleanly; network effects via settlement graph | **WINNER** — FlowArc must become this, or die |
 | #2 Platform Payouts | Same engine as #1 with GTM via platforms | Overlaps #1; fold into Settlement OS product line |
 | #3 Treasury OS | CFO budget; Circle-adjacent | Competes with banks/Modern Treasury/Circle itself; weaker “condition” wedge for hackathon uniqueness |
 | #4 Agent Rail | Category-defining if agents monetize | Who pays *today*? Revenue timing fails IC for near-term survival (SP demand) |
@@ -70,8 +70,8 @@ Scoring 1–10 each: Market importance · Arc-native advantage · Unit economics
 
 ### A4. Gate decision on opportunity
 
-**Hospitality-only TableOS: FAIL replacement test.**  
-**Chosen opportunity: #1 Condition-Gated Commercial Settlement OS**, branded TableOS (“the settlement table”), with **premium multi-party experiential events as Beachhead A** (not the company).
+**Hospitality-only FlowArc: FAIL replacement test.**  
+**Chosen opportunity: #1 Condition-Gated Commercial Settlement OS**, branded FlowArc, with **premium multi-party experiential events as Beachhead A** (not the company).
 
 **GO / NO-GO / PIVOT:** **PIVOT**
 
@@ -94,7 +94,7 @@ Scoring 1–10 each: Market importance · Arc-native advantage · Unit economics
 
 **Not:** reservations software · not remittance · not “accept USDC” checkout · not NFT tickets.
 
-**Category narrative:** Stripe moves cards. Banks hold escrow slowly. Marketplaces spreadsheet splits. **TableOS settles conditional obligations.**
+**Category narrative:** Stripe moves cards. Banks hold escrow slowly. Marketplaces spreadsheet splits. **FlowArc settles conditional obligations.**
 
 ---
 
@@ -181,7 +181,7 @@ Arc is the **implementation advantage**, not the headline.
 | Balances ledger | Yes | Keep thin |
 | Pause/refund | Yes | Keep |
 
-**Removed/redesigned:** anything that is pure Stripe Checkout clone without condition+split. TableOS must not be “Stripe but USDC.”
+**Removed/redesigned:** anything that is pure Stripe Checkout clone without condition+split. FlowArc must not be “Stripe but USDC.”
 
 ---
 
@@ -200,7 +200,7 @@ Restaurant-owner SMB sales + consumer wallet UX is **not credible** as a primary
 |---|---|---|
 | **First customer** | 1 luxury hotel private-dining program OR 1 destination chef residency organizer (Dubai/Miami/Singapore/Lisbon/NYC) already running prepaid collabs | Founder-led; warm intro via Circle/Arc ecosystem, hospitality operators, or F&B consultants; paid pilot |
 | **First 10** | 5 hotel private dining + 3 dining clubs + 2 multi-chef residency producers | Same; case study from #1; hospitality operator Slack/WhatsApp networks; Arc hackathon visibility |
-| **First 100** | Regional clusters + 5–10 **platform** design partners (event platforms embedding TableOS settlement API) | Partnership GTM shift; not 100 SMB door-knocks |
+| **First 100** | Regional clusters + 5–10 **platform** design partners (event platforms embedding FlowArc settlement API) | Partnership GTM shift; not 100 SMB door-knocks |
 
 ### Strategies
 
@@ -223,9 +223,9 @@ Hospitality-only: weak (each restaurant silo).
 **Required compounding loop (pivoted):**
 
 ```
-More merchants/platforms settle on TableOS
+More merchants/platforms settle on FlowArc
   → more partners receive USDC payouts (wallets already warm)
-  → more counterparties prefer TableOS obligations
+  → more counterparties prefer FlowArc obligations
   → denser split graphs + reusable payout identities
   → better risk/show-rate data models
   → lower dispute rates → higher take-rate willingness
@@ -271,7 +271,7 @@ If we cannot get **partner payout network + platform embeds**, redesign business
 
 ## K. Founder Notes (decision record)
 
-**Why this decision?** Hospitality-only fails EV, category, and distribution tests. Settlement OS passes Arc-native and infrastructure tests. Keeping TableOS name + dining wedge preserves hackathon narrative without lying about the company.
+**Why this decision?** Hospitality-only fails EV, category, and distribution tests. Settlement OS passes Arc-native and infrastructure tests. Keeping FlowArc name + dining wedge preserves hackathon narrative without lying about the company.
 
 **Alternatives considered:** Pure agent rail; treasury OS; hospitality SaaS; USDC checkout; horizontal API-only.
 
@@ -404,6 +404,6 @@ Until then: **Step 2 User Stories = BLOCKED.**
 
 ## Document control
 
-- Canvas: `tableos-ic-gate.canvas.tsx`  
+- Canvas: `flowarc-ic-gate.canvas.tsx`  
 - Finance detail: `docs/finance/UNIT_ECONOMICS.md`  
 - Owner: Founder IC session 2026-07-22

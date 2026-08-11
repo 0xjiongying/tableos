@@ -17,11 +17,11 @@ export default function ContactPage() {
     const email = String(data.get("email") ?? "").trim();
     const org = String(data.get("org") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
-    const subject = encodeURIComponent(`TableOS demo request — ${org || name || "inquiry"}`);
+    const subject = encodeURIComponent(`FlowArc demo request — ${org || name || "inquiry"}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nOrganization: ${org}\n\n${message}\n\n— Sent from ${SITE.url}/contact`,
     );
-    window.location.href = `mailto:hello@tableos.app?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hello@flowarc.app?subject=${subject}&body=${body}`;
     setSent(true);
   }
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </Button>
               {sent ? (
                 <p className="text-sm text-tos-success" role="status">
-                  Your mail client should open with a prefilled request. If it does not, email hello@tableos.app.
+                  Your mail client should open with a prefilled request. If it does not, email hello@flowarc.app.
                 </p>
               ) : (
                 <p className="text-xs text-tos-text-faint">

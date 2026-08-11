@@ -1,8 +1,8 @@
-# TableOS — Pitch Outline (Hackathon / Investor)
+# FlowArc — Pitch Outline (Hackathon / Investor)
 
 ## What it is
 
-**TableOS** is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses — built on Arc.
+**FlowArc** is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses — built on Arc.
 
 ## Problem
 
@@ -31,7 +31,7 @@ Restaurants · chef’s tables · luxury hotels · tourism & travel experiences 
 
 ## Why Arc
 
-Circle’s stablecoin-native EVM L1 — USDC as primary gas, ~780ms deterministic finality (Malachite BFT), institutional settlement primitives. Verified testnet facts stay on the Technology page; TableOS does not fake on-chain success.
+Circle’s stablecoin-native EVM L1 — USDC as primary gas, ~780ms deterministic finality (Malachite BFT), institutional settlement primitives. Verified testnet facts stay on the Technology page; FlowArc does not fake on-chain success.
 
 ## Demo proof
 

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("TableOS smoke", () => {
+test.describe("FlowArc smoke", () => {
   test("home renders brand", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("heading", { name: /finest tables/i })).toBeVisible();

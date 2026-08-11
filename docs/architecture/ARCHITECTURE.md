@@ -1,8 +1,8 @@
-# Architecture — TableOS
+# Architecture — FlowArc
 
 ## Context
 
-TableOS v1 ships a **restaurant OS shell** with a **settlement-critical vertical slice**. Long-term schemas support full ops; v1 UI proves book → hold → attend → release.
+FlowArc v1 ships a **restaurant OS shell** with a **settlement-critical vertical slice**. Long-term schemas support full ops; v1 UI proves book → hold → attend → release.
 
 ```mermaid
 flowchart LR

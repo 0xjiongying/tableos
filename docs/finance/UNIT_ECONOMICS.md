@@ -1,11 +1,11 @@
-# TableOS — Unit Economics Models (IC Gate)
+# FlowArc — Unit Economics Models (IC Gate)
 
 **Version:** 1.0.0  
 **Date:** 2026-07-22  
 **Status:** Planning model — **not** trailing actuals  
 **Labels:** All figures **RA** unless marked VF/SP. Sensitivity: Conservative / Base / Aggressive.
 
-Parent decision doc: `docs/strategy/TABLEOS_IC_GATE.md`
+Parent decision doc: `docs/strategy/FLOWARC_IC_GATE.md`
 
 ---
 
@@ -339,7 +339,7 @@ Expansion revenue share of new ARR: Y2 15% / Y3 35% / Y5 55% (Base).
 
 ## 12. Benchmark Comparison
 
-| Metric | Best-in-class SaaS | Best-in-class fintech infra | TableOS H Base | TableOS S Base | Gap / fix |
+| Metric | Best-in-class SaaS | Best-in-class fintech infra | FlowArc H Base | FlowArc S Base | Gap / fix |
 |---|---|---|---|---|---|
 | GM% | 80–90% | 60–80% | 75% | 78% | OK |
 | LTV:CAC | &gt;3× | &gt;5× | 3.5× | 8.8× | H weak; S OK if real |

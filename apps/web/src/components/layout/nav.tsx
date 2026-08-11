@@ -15,7 +15,7 @@ export function StaffNav({ pathname }: { pathname: string }) {
       <div className="mx-auto flex max-w-[72rem] flex-wrap items-center justify-between gap-4 px-6 py-4">
         <div className="flex items-center gap-6">
           <Link href="/staff" className="text-base font-medium tracking-[-0.02em] text-tos-text-strong">
-            TableOS
+            FlowArc
           </Link>
           <nav aria-label="Staff" className="flex flex-wrap gap-1">
             {staffLinks.map((l) => {
@@ -57,7 +57,7 @@ export function GuestNav({ restaurantName }: { restaurantName: string }) {
     <header className="border-b border-tos-border-subtle">
       <div className="mx-auto flex max-w-[40rem] items-center justify-between px-8 py-6">
         <div>
-          <p className="text-xs tracking-[0.18em] text-tos-premium uppercase">TableOS</p>
+          <p className="text-xs tracking-[0.18em] text-tos-premium uppercase">FlowArc</p>
           <p className="mt-1 text-lg font-medium text-tos-text-strong">{restaurantName}</p>
         </div>
         <Link href="/" className="text-sm text-tos-text-muted hover:text-tos-text">

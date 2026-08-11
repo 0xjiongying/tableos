@@ -9,7 +9,7 @@ import { ARC, DEV_STACK, SITE } from "@/features/marketing/content";
 export const metadata: Metadata = {
   title: "Technology",
   description:
-    "TableOS architecture and Arc developer details — EVM testnet Chain ID 5042002, RPC, explorer, App Kit path, and honest adapter status.",
+    "FlowArc architecture and Arc developer details — EVM testnet Chain ID 5042002, RPC, explorer, App Kit path, and honest adapter status.",
 };
 
 export default function TechnologyPage() {
@@ -18,7 +18,7 @@ export default function TechnologyPage() {
       <Section
         eyebrow="Technology"
         title="Architecture for condition-gated USDC settlement"
-        lead="Hospitality product shell on Next.js. Settlement core behind a PaymentsPort. Arc is Circle’s stablecoin-native EVM L1 — TableOS targets programmable escrow, release, and split on USDC."
+        lead="Hospitality product shell on Next.js. Settlement core behind a PaymentsPort. Arc is Circle’s stablecoin-native EVM L1 — FlowArc targets programmable escrow, release, and split on USDC."
       >
         <Reveal>
           <div className="flex flex-wrap gap-3">
@@ -26,7 +26,7 @@ export default function TechnologyPage() {
               <Button>Arc docs</Button>
             </a>
             <a href={SITE.github} target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary">TableOS GitHub</Button>
+              <Button variant="secondary">FlowArc GitHub</Button>
             </a>
             <a href={ARC.github} target="_blank" rel="noopener noreferrer">
               <Button variant="ghost">circlefin/arc-node</Button>
@@ -39,7 +39,7 @@ export default function TechnologyPage() {
         tone="subtle"
         eyebrow="Developers"
         title="Arc testnet & stack"
-        lead="Public Arc testnet launched October 28, 2025. Mainnet targeted 2026. No Arc mainnet token is live — TableOS does not depend on an Arc token."
+        lead="Public Arc testnet launched October 28, 2025. Mainnet targeted 2026. No Arc mainnet token is live — FlowArc does not depend on an Arc token."
       >
         <div className="grid gap-4 md:grid-cols-2">
           <Reveal>

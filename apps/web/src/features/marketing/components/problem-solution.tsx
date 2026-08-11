@@ -50,7 +50,7 @@ export function ProblemSection() {
           <FlowCard title="Current workflow" tone="muted" steps={[...CURRENT_FLOW]} />
         </Reveal>
         <Reveal delay={0.08}>
-          <FlowCard title="TableOS workflow" tone="accent" steps={[...FUTURE_FLOW]} />
+          <FlowCard title="FlowArc workflow" tone="accent" steps={[...FUTURE_FLOW]} />
         </Reveal>
       </div>
       <Reveal className="mt-10 max-w-2xl">

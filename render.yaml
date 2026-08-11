@@ -1,4 +1,4 @@
-# TableOS on Render — Next.js web + existing Postgres
+# FlowArc on Render — Next.js web + existing Postgres
 # Source of truth: https://github.com/0xjiongying/tableos
 # Public deploy mirror (Render GitHub access): https://github.com/0xjiongying/tableos-render
 
@@ -16,8 +16,8 @@ services:
     region: oregon
     branch: master
     autoDeployTrigger: commit
-    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @tableos/web build
-    startCommand: pnpm --filter @tableos/web exec next start --hostname 0.0.0.0 --port $PORT
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @flowarc/web build
+    startCommand: pnpm --filter @flowarc/web exec next start --hostname 0.0.0.0 --port $PORT
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION

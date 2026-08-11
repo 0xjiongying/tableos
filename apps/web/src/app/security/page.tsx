@@ -8,7 +8,7 @@ import { ARC, ENTERPRISE } from "@/features/marketing/content";
 export const metadata: Metadata = {
   title: "Security",
   description:
-    "TableOS enterprise posture — security, compliance, auditability, reliability, and honest Arc adapter boundaries.",
+    "FlowArc enterprise posture — security, compliance, auditability, reliability, and honest Arc adapter boundaries.",
 };
 
 export default function SecurityPage() {
@@ -17,7 +17,7 @@ export default function SecurityPage() {
       <Section
         eyebrow="Security & enterprise"
         title="Trust requirements for high-ticket settlement"
-        lead="Luxury operators need calm UX and serious controls. TableOS separates guest language from settlement mechanics and refuses to fabricate chain success."
+        lead="Luxury operators need calm UX and serious controls. FlowArc separates guest language from settlement mechanics and refuses to fabricate chain success."
       >
         <div className="grid gap-6 sm:grid-cols-2">
           {ENTERPRISE.map((e) => (

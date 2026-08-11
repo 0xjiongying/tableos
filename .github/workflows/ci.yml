@@ -64,7 +64,7 @@ jobs:
           pnpm db:seed
 
       - name: Install Playwright browser
-        run: pnpm --filter @tableos/web exec playwright install chromium --with-deps
+        run: pnpm --filter @flowarc/web exec playwright install chromium --with-deps
 
       - name: E2E smoke
         run: pnpm test:e2e

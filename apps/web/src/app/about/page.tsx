@@ -7,8 +7,7 @@ import { ARC, SITE } from "@/features/marketing/content";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "About TableOS — a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses.",
+  description: `About ${SITE.name} — ${SITE.tagline} ${SITE.description}`,
 };
 
 export default function AboutPage() {
@@ -16,19 +15,19 @@ export default function AboutPage() {
     <MarketingShell>
       <Section
         eyebrow="About"
-        title="Programmable money for the hospitality industry"
-        lead="TableOS is a programmable financial operating system for the hospitality industry, starting with premium restaurants, luxury hotels, and tourism businesses. Built on Arc — accept USDC payments, automate escrow, distribute revenue instantly, and manage treasury through programmable money."
+        title={SITE.tagline}
+        lead={`${SITE.name} — ${SITE.description} Built on Arc.`}
       >
         <Reveal>
           <div className="prose-none max-w-2xl space-y-4 text-sm leading-relaxed text-tos-text-muted">
             <p>
               <strong className="font-medium text-tos-text-strong">What changes:</strong> instead of treating
-              payments as isolated transactions, TableOS transforms every payment into an automated financial
+              payments as isolated transactions, FlowArc transforms every payment into an automated financial
               workflow — from reservation and settlement to revenue sharing and treasury updates.
             </p>
             <p>
               <strong className="font-medium text-tos-text-strong">Why Arc:</strong> built on Arc’s
-              stablecoin-native infrastructure, TableOS demonstrates how programmable money can simplify financial
+              stablecoin-native infrastructure, FlowArc demonstrates how programmable money can simplify financial
               operations, reduce manual reconciliation, and enable real-time, cross-border commerce for premium
               hospitality. Arc is Circle’s L1 with USDC gas, ~{ARC.finalityMs}ms deterministic finality (
               {ARC.consensus}), and institutional settlement primitives.

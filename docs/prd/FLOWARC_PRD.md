@@ -1,6 +1,6 @@
-# TableOS — Product Requirements Document (Step 1)
+# FlowArc — Product Requirements Document (Step 1)
 
-**Status:** SUPERSEDED AS COMPANY THESIS by IC Gate (**PIVOT**) — see `docs/strategy/TABLEOS_IC_GATE.md`  
+**Status:** SUPERSEDED AS COMPANY THESIS by IC Gate (**PIVOT**) — see `docs/strategy/FLOWARC_IC_GATE.md`  
 **PRD use:** Hospitality workflow remains a valid *beachhead skin* only after Settlement OS rewrite.  
 **Step 2 (User Stories):** Still **BLOCKED**  
 **Version:** 1.0.0-prd (hospitality framing) · Gate: 2026-07-22  
@@ -79,7 +79,7 @@ Premium dining sells **scarce, high-value inventory** (a table at a specific tim
 
 ### 0.6 Decision makers & buying triggers
 
-| Role | Concern | Trigger to buy TableOS |
+| Role | Concern | Trigger to buy FlowArc |
 |---|---|---|
 | Owner / Chef-owner | Margin, no-shows, brand control | Lost $5k+ night to no-shows; collab dinner payout fight |
 | GM / Events lead | Ops simplicity, guest experience | Manual deposit chasing before a launch dinner |
@@ -90,13 +90,13 @@ Premium dining sells **scarce, high-value inventory** (a table at a specific tim
 
 ### 0.7 Market
 
-- Global eating-out / fine dining is large; TableOS targets the **prepaid experiential / limited seating** wedge, not all restaurant GMV. **(RA)**  
+- Global eating-out / fine dining is large; FlowArc targets the **prepaid experiential / limited seating** wedge, not all restaurant GMV. **(RA)**  
 - Experiential dining, destination restaurants, and chef residencies have grown with social discovery. **(RA)**  
 - Stablecoin settlement rails (USDC) and Arc (Circle L1) create a new technical possibility for dollar-native escrow with predictable fees. **(VF: Arc positioning per Circle)**
 
 ### 0.8 Competition (summary)
 
-| Competitor | Strength | Gap vs TableOS MVP |
+| Competitor | Strength | Gap vs FlowArc MVP |
 |---|---|---|
 | Tock | Premium prepaid dining UX; inventory | Card rails; no programmable multi-party escrow on deterministic L1 |
 | Resy / OpenTable | Demand / discovery | Deposit model; weak collab settlement |
@@ -130,11 +130,11 @@ Premium dining sells **scarce, high-value inventory** (a table at a specific tim
 
 ### One-sentence value proposition
 
-**TableOS lets premium restaurants sell scarce dining events with USDC escrow on Arc, release funds only after attendance is verified, and split revenue to partners instantly — turning no-show risk and manual payouts into programmable settlement.**
+**FlowArc lets premium restaurants sell scarce dining events with USDC escrow on Arc, release funds only after attendance is verified, and split revenue to partners instantly — turning no-show risk and manual payouts into programmable settlement.**
 
 ### Executive summary
 
-TableOS is a **programmable financial operating system for the hospitality industry**, starting with premium restaurants, luxury hotels, and tourism businesses — and one killer beachhead workflow: **prepaid event reservation → Arc USDC escrow → attendance verification → automatic release & revenue split → treasury update**.
+FlowArc is a **programmable financial operating system for the hospitality industry**, starting with premium restaurants, luxury hotels, and tourism businesses — and one killer beachhead workflow: **prepaid event reservation → Arc USDC escrow → attendance verification → automatic release & revenue split → treasury update**.
 
 We are not building a restaurant website, NFT gallery, or crypto-themed booking toy. We are building the **settlement layer** for high-ticket dining inventory where money must be certain before service and divisible after service. Arc is required because the product needs **native USDC, predictable dollar-denominated fees, deterministic settlement, and programmable escrow/split** — properties that card processors and generic L2 gas markets do not cleanly provide for this workflow.
 
@@ -146,7 +146,7 @@ MVP proves the loop end-to-end for one restaurant and one event type. Platform e
 
 ### Problem (quantified framing)
 
-Premium operators sell irreversible prep (protein, labor, opportunity cost of the seat). Card deposits are partial and reversible; partner splits are offline; settlement is slow. TableOS replaces “hope + spreadsheet” with **escrowed full prepay and attendance-conditioned release**.
+Premium operators sell irreversible prep (protein, labor, opportunity cost of the seat). Card deposits are partial and reversible; partner splits are offline; settlement is slow. FlowArc replaces “hope + spreadsheet” with **escrowed full prepay and attendance-conditioned release**.
 
 ### ICP
 
@@ -169,7 +169,7 @@ For a restaurant running **8 premium events/month × 24 covers × $250** = **$48
 |---|---|---|
 | No-show loss reduction (4% → 1% of GMV) | 3% GMV recovered | ~$1,440 |
 | Faster partner settlement (ops hours) | 4 hrs × $75 | ~$300 |
-| Net fee differential vs card+platform | 0.5–1.0% if TableOS fee lower than status quo | ~$240–$480 |
+| Net fee differential vs card+platform | 0.5–1.0% if FlowArc fee lower than status quo | ~$240–$480 |
 | **Illustrative total** | | **~$2,000+/mo** |
 
 Payback on $399/mo SaaS is immediate if even one no-show cluster is prevented. **(RA — validate with design partners)**
@@ -180,7 +180,7 @@ Payback on $399/mo SaaS is immediate if even one no-show cluster is prevented. *
 
 See Discovery §0.8. Positioning:
 
-> **Tock/Resy sell the seat. Stripe moves the card. TableOS settles the obligation.**
+> **Tock/Resy sell the seat. Stripe moves the card. FlowArc settles the obligation.**
 
 Switch reason must be economic and operational, not ideological:
 
@@ -223,7 +223,7 @@ Switch reason must be economic and operational, not ideological:
 | **Restaurant Admin** | Email + passkey; wallet linked for treasury | Create org, events, set split rules, verify attendance, pause event sales, view treasury, configure payout addresses |
 | **Door / Host Staff** | Email + passkey (no treasury wallet required) | View guest list, mark attended / no-show, cannot change splits or withdraw |
 | **Diner (Guest)** | Wallet (RainbowKit) + optional email receipt | Browse public event page, reserve, pay USDC, view reservation status, request cancel per policy |
-| **Platform Operator (TableOS)** | Internal RBAC | Emergency pause, support read tools, fee config — not day-to-day restaurant ops |
+| **Platform Operator (FlowArc)** | Internal RBAC | Emergency pause, support read tools, fee config — not day-to-day restaurant ops |
 
 **MVP RBAC rules:** least privilege; staff cannot withdraw; admin withdrawals only from TreasuryVault per policy; all privileged actions audited.
 
@@ -382,7 +382,7 @@ Restaurant creates event
 
 ### Compliance
 
-- TableOS is **software + smart contracts**; legal classification (MSB, money transmission) is **open question** — design to minimize custody of user funds by company (guest → contract; company does not hold USDC on behalf of restaurants in MVP hot wallets). **(SP / legal required)**  
+- FlowArc is **software + smart contracts**; legal classification (MSB, money transmission) is **open question** — design to minimize custody of user funds by company (guest → contract; company does not hold USDC on behalf of restaurants in MVP hot wallets). **(SP / legal required)**  
 - Geofencing / ToS: launch jurisdictions TBD  
 - Sanctions screening of wallets — Phase 1.5 recommendation **(RA)**  
 
@@ -532,7 +532,7 @@ Phase 3 start: multi-location, enterprise perms, accounting/POS integrations, pu
 |---|---|---|
 | Arc public testnet / mainnet availability for demo | VF/RA | Confirm current Circle Arc network status before hackathon build |
 | USDC contract address on Arc | VF | Must verify from Circle docs |
-| Whether TableOS is an MSB in launch jurisdictions | SP | Requires counsel |
+| Whether FlowArc is an MSB in launch jurisdictions | SP | Requires counsel |
 | Optimal take rate vs SaaS mix | RA | Test with design partners |
 | On-chain vs off-chain capacity source of truth | RA | Step 6 decision |
 | Default no-show policy socially acceptable for Michelin-tier | RA | Customer interviews |

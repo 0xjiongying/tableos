@@ -1,4 +1,4 @@
-# TableOS — Hackathon Demo Script
+# FlowArc — Hackathon Demo Script
 
 **Duration:** 4–6 minutes  
 **Demo restaurant:** Kintsugi (Omotesando)  
@@ -27,7 +27,7 @@ Credentials: `host@kintsugi.tokyo` / `tableos-demo`
 
 ### 0:00 — Frame (30s)
 
-> “Premium dining sells scarce seats. Today deposits are messy and partner splits are spreadsheets. TableOS holds the guest’s payment until they arrive, then settles the house — calmly, without crypto theatre.”
+> “Premium dining sells scarce seats. Today deposits are messy and partner splits are spreadsheets. FlowArc holds the guest’s payment until they arrive, then settles the house — calmly, without crypto theatre.”
 
 Show home: Japanese luxury UI, not a dashboard.
 

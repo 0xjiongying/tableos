@@ -1,4 +1,4 @@
-# TableOS Escrow contracts (Arc / USDC)
+# FlowArc Escrow contracts (Arc / USDC)
 
 **Status:** Scaffold only — **not** connected to the Next.js app.  
 The live demo uses `PaymentsPort` → `mock` adapter.

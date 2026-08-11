@@ -1,12 +1,12 @@
-# TableOS Design System — Luxury Japanese Hospitality
+# FlowArc Design System — Luxury Japanese Hospitality
 
 **Status:** Design direction v1.0 — authoritative for hospitality beachhead visual/UX  
 **Date:** 2026-07-22  
-**Company thesis:** Condition-Gated Settlement OS ([IC Gate](../strategy/TABLEOS_IC_GATE.md))  
+**Company thesis:** Condition-Gated Settlement OS ([IC Gate](../strategy/FLOWARC_IC_GATE.md))  
 **Role of this system:** Premium dining is the **beachhead skin**, not the company. Visual language serves Michelin / hotel / omakase calm today; tokens and density modes remain extensible to enterprise settlement later.  
 **Canonical tokens:** [`tokens.css`](./tokens.css) · [`tokens.json`](./tokens.json)  
 **Founder rationale:** [`FOUNDER_NOTES.md`](./FOUNDER_NOTES.md)  
-**Interactive canvas:** open `tableos-design-system.canvas.tsx` beside chat  
+**Interactive canvas:** open `flowarc-design-system.canvas.tsx` beside chat  
 
 **Not this deliverable:** User stories, app screens implementation, crypto dashboard chrome.
 
@@ -16,7 +16,7 @@
 
 > **Quiet technology for the world’s finest tables** — every pixel serves trust, calm, and craftsmanship; settlement power stays invisible behind Omotenashi.
 
-TableOS must feel at home in a three-star Kyoto dining room: understated, luminous, meticulously composed. Guests who have never heard of Arc must trust payment and escrow screens the way they trust a handwritten bill at Aman — clear, human, inevitable.
+FlowArc must feel at home in a three-star Kyoto dining room: understated, luminous, meticulously composed. Guests who have never heard of Arc must trust payment and escrow screens the way they trust a handwritten bill at Aman — clear, human, inevitable.
 
 ---
 

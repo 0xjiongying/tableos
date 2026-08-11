@@ -1,4 +1,4 @@
-# TableOS — Scope Resolution (A / B / C)
+# FlowArc — Scope Resolution (A / B / C)
 
 **Status:** BINDING for this codebase  
 **Date:** 2026-07-22  
@@ -73,6 +73,6 @@ Fewer features, each production-quality for what is claimed. README must label *
 
 ## Related docs
 
-- `docs/prd/TABLEOS_PRD_V2.md` — reconciled product
-- `docs/strategy/TABLEOS_IC_GATE.md` — binding IC verdict
-- `docs/design/TABLEOS_DESIGN_SYSTEM.md` — visual authority
+- `docs/prd/FLOWARC_PRD_V2.md` — reconciled product
+- `docs/strategy/FLOWARC_IC_GATE.md` — binding IC verdict
+- `docs/design/FLOWARC_DESIGN_SYSTEM.md` — visual authority

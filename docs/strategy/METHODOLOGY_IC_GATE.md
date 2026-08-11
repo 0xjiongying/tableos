@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0  
 **Date:** 2026-07-22  
-**Applies to:** TableOS and future Arc products in this repo
+**Applies to:** FlowArc and future Arc products in this repo
 
 ## Problem with PRD-first
 
@@ -28,8 +28,8 @@ Shipping a polished PRD for a wedge that fails opportunity replacement, distribu
 | PIVOT | Thesis changes; PRD rewrite required; Step 2 blocked |
 | NO-GO | Kill; do not build |
 
-## TableOS application (2026-07-22)
+## FlowArc application (2026-07-22)
 
-Result: **PIVOT**. See `docs/strategy/TABLEOS_IC_GATE.md`.
+Result: **PIVOT**. See `docs/strategy/FLOWARC_IC_GATE.md`.
 
 Step 2 User Stories remains **BLOCKED** until conditional criteria in the IC gate doc are met.
