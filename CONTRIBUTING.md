@@ -11,9 +11,9 @@
 ## Workflow
 
 1. Branch from `main`  
-2. `pnpm install && docker compose up -d postgres && pnpm db:push && pnpm db:seed`  
+2. `npm install && docker compose up -d postgres && npm run db:push && npm run db:seed`  
 3. Implement + tests  
-4. `pnpm lint && pnpm typecheck && pnpm test`  
+4. `npm run lint && npm run typecheck && npm run test`  
 5. PR with clear production-vs-scaffold notes  
 
 ## Code layout
