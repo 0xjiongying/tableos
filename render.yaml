@@ -18,16 +18,16 @@ services:
     region: oregon
     branch: master
     autoDeployTrigger: commit
-    # Install all workspace deps (incl. Prisma CLI), then production-build the Next app.
-    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @flowarc/web build
-    # Apply schema + demo seed before each release so staff/guest flows have data.
-    preDeployCommand: pnpm --filter @flowarc/web exec prisma db push && pnpm --filter @flowarc/web db:seed
-    # Bind to Render's PORT on all interfaces (required).
-    startCommand: pnpm --filter @flowarc/web exec next start --hostname 0.0.0.0 --port $PORT
+    buildCommand: npm install && npm run build
+    preDeployCommand: npm run db:push -w @flowarc/web && npm run db:seed -w @flowarc/web
+    startCommand: npm run start -w @flowarc/web -- --hostname 0.0.0.0 --port $PORT
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION
         value: "20"
+      # Ensure npm install still includes build-time devDependencies (typescript, tailwind, etc.)
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL

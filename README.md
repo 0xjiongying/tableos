@@ -26,7 +26,7 @@ Scope decision: [`docs/strategy/SCOPE_RESOLUTION.md`](docs/strategy/SCOPE_RESOLU
 ### Prerequisites
 
 - Node 20+
-- [pnpm](https://pnpm.io/) 10+
+- npm 10+ (comes with Node)
 - Docker (Postgres)
 
 ### Run locally
@@ -39,14 +39,14 @@ docker compose up -d postgres
 cp .env.example apps/web/.env
 
 # 3) Install
-pnpm install
+npm install
 
 # 4) DB
-pnpm db:push
-pnpm db:seed
+npm run db:push
+npm run db:seed
 
 # 5) Dev server
-pnpm dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
@@ -58,11 +58,11 @@ Open [http://localhost:3000](http://localhost:3000)
 
 | Command | Purpose |
 |---|---|
-| `pnpm dev` | Next.js dev (Turbopack) |
-| `pnpm test` | Vitest domain tests |
-| `pnpm test:e2e` | Playwright smoke |
-| `pnpm lint` / `pnpm typecheck` | Quality gates |
-| `pnpm db:seed` | Michelin-style Kintsugi demo data |
+| `npm run dev` | Next.js dev (Turbopack) |
+| `npm run test` | Vitest domain tests |
+| `npm run test:e2e` | Playwright smoke |
+| `npm run lint` / `npm run typecheck` | Quality gates |
+| `npm run db:seed` | Michelin-style Kintsugi demo data |
 
 ---
 

@@ -25,46 +25,42 @@ jobs:
 
     env:
       DATABASE_URL: postgresql://tableos:tableos@localhost:5432/tableos?schema=public
-      # CI service maps container 5432 → localhost:5432 (not host 5433)
       DEMO_AUTH_ENABLED: "true"
       PAYMENTS_ADAPTER: mock
       NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
       AI_ENABLED: "false"
+      NPM_CONFIG_PRODUCTION: "false"
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: npm
 
       - name: Install
-        run: pnpm install --frozen-lockfile=false
+        run: npm install
 
       - name: Generate Prisma client
-        run: pnpm db:generate
+        run: npm run db:generate
 
       - name: Lint
-        run: pnpm lint
+        run: npm run lint
 
       - name: Typecheck
-        run: pnpm typecheck
+        run: npm run typecheck
 
       - name: Unit tests
-        run: pnpm test
+        run: npm run test
 
       - name: Push schema + seed
         run: |
-          pnpm db:push
-          pnpm db:seed
+          npm run db:push
+          npm run db:seed
 
       - name: Install Playwright browser
-        run: pnpm --filter @flowarc/web exec playwright install chromium --with-deps
+        run: npx --workspace=@flowarc/web playwright install chromium --with-deps
 
       - name: E2E smoke
-        run: pnpm test:e2e
+        run: npm run test:e2e

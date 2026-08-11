@@ -10,7 +10,7 @@
 
 ```bash
 docker compose up -d postgres
-pnpm install && pnpm db:push && pnpm db:seed && pnpm dev
+npm install && npm run db:push && npm run db:seed && npm run dev
 ```
 
 Tabs ready:

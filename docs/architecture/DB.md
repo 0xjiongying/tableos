@@ -34,5 +34,5 @@ erDiagram
 
 ## Migrations
 
-Dev: `pnpm db:push`  
-Prod: prefer `pnpm db:migrate` once migration history is established
+Dev: `npm run db:push`  
+Prod: prefer `npm run db:migrate` once migration history is established

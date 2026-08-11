@@ -20,9 +20,9 @@ Blueprint: [`render.yaml`](../../render.yaml) at repo root.
 | Service | `tableos-web` → https://tableos-web.onrender.com |
 | Database | `tableos-demo-db` (Postgres 16, free) |
 | Branch | `master` (auto-deploy on commit) |
-| Build | `corepack enable && pnpm install --frozen-lockfile && pnpm --filter @flowarc/web build` |
-| Pre-deploy | `prisma db push` + demo seed |
-| Start | `next start --hostname 0.0.0.0 --port $PORT` |
+| Build | `npm install && npm run build` |
+| Pre-deploy | `npm run db:push -w @flowarc/web && npm run db:seed -w @flowarc/web` |
+| Start | `npm run start -w @flowarc/web -- --hostname 0.0.0.0 --port $PORT` |
 
 ### First-time / repair checklist
 
@@ -64,7 +64,7 @@ Optional: `OPENAI_API_KEY`, `SESSION_SECRET` (set a strong secret in prod).
 
 ## Release checklist
 
-1. `pnpm lint && pnpm typecheck && pnpm test && pnpm build`
+1. `npm run lint && npm run typecheck && npm run test && npm run build`
 2. Merge to `master` (triggers Render auto-deploy)
 3. Confirm Arc adapter is **not** selected unless fully wired
 4. Disable demo auth for any internet-facing production beyond the hackathon demo

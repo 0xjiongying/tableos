@@ -3,20 +3,23 @@
   "private": true,
   "version": "0.1.0",
   "description": "FlowArc — Programmable financial infrastructure for organizations.",
-  "packageManager": "pnpm@10.33.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "pnpm --filter @flowarc/web dev",
-    "build": "pnpm --filter @flowarc/web build",
-    "start": "pnpm --filter @flowarc/web start",
-    "lint": "pnpm --filter @flowarc/web lint",
-    "typecheck": "pnpm --filter @flowarc/web typecheck",
-    "test": "pnpm --filter @flowarc/web test",
-    "test:e2e": "pnpm --filter @flowarc/web test:e2e",
-    "db:generate": "pnpm --filter @flowarc/web db:generate",
-    "db:push": "pnpm --filter @flowarc/web db:push",
-    "db:migrate": "pnpm --filter @flowarc/web db:migrate",
-    "db:seed": "pnpm --filter @flowarc/web db:seed",
-    "db:studio": "pnpm --filter @flowarc/web db:studio",
+    "dev": "npm run dev -w @flowarc/web",
+    "build": "npm run build -w @flowarc/web",
+    "start": "npm run start -w @flowarc/web",
+    "lint": "npm run lint -w @flowarc/web",
+    "typecheck": "npm run typecheck -w @flowarc/web",
+    "test": "npm run test -w @flowarc/web",
+    "test:e2e": "npm run test:e2e -w @flowarc/web",
+    "db:generate": "npm run db:generate -w @flowarc/web",
+    "db:push": "npm run db:push -w @flowarc/web",
+    "db:migrate": "npm run db:migrate -w @flowarc/web",
+    "db:seed": "npm run db:seed -w @flowarc/web",
+    "db:studio": "npm run db:studio -w @flowarc/web",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -26,15 +29,5 @@
   },
   "engines": {
     "node": ">=20"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@prisma/client",
-      "@prisma/engines",
-      "esbuild",
-      "prisma",
-      "sharp",
-      "unrs-resolver"
-    ]
   }
 }
