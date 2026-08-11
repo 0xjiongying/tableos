@@ -21,8 +21,8 @@ Blueprint: [`render.yaml`](../../render.yaml) at repo root.
 | Database | `tableos-demo-db` (Postgres 16, free) |
 | Branch | `master` (auto-deploy on commit) |
 | Build | `npm install && npm run build` |
-| Pre-deploy | `npm run db:push -w @flowarc/web && npm run db:seed -w @flowarc/web` |
-| Start | `npm run start -w @flowarc/web` (binds `0.0.0.0`, uses `PORT`) |
+| Pre-deploy | `node scripts/render-predeploy.mjs` (db push + seed, fail-fast) |
+| Start | `sh -c 'cd apps/web && exec npx next start -H 0.0.0.0 -p "$PORT"'` |
 | Health | `/api/health` (no DB) |
 
 ### First-time / repair checklist

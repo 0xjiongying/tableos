@@ -21,8 +21,8 @@ services:
     buildCommand: npm install && npm run build
     # Fail-fast schema/seed — must not hang the deploy on DB connect
     preDeployCommand: node scripts/render-predeploy.mjs
-    # Bind 0.0.0.0; Next reads Render's PORT env automatically
-    startCommand: npm run start -w @flowarc/web
+    # Explicit host + Render $PORT (shell expands $PORT; do not hardcode)
+    startCommand: sh -c 'cd apps/web && exec npx next start -H 0.0.0.0 -p "$PORT"'
     healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
